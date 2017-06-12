@@ -32,6 +32,8 @@ group :development, :test do
     gem "faker"
     gem "database_cleaner"
     gem "launchy"
+    # On chapter 9, Speedng up specs
+    gem "guard-rspec"
 end
 ```
 
