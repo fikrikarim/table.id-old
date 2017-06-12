@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installing
 
-Things you may want to cover:
+- Ruby version:
+```ruby
+2.4.0
+```
+- Rails version:
+```ruby
+5.1.1
+```
 
-* Ruby version
+Then run:
+```ruby
+bundle install
+rails db:migrate
+# Or
+# Rails db:reset if you already have a development database
+rails server
+```
 
-* System dependencies
+## Testing
 
-* Configuration
+Using guide from "Everyday Testing with Rails."
 
-* Database creation
+Added to gemfile:
+```ruby
+group :development, :test do 
+    gem "rspec-rails"
+    gem "factory_girl_rails"
+    gem "faker"
+    gem "database_cleaner"
+    gem "launchy"
+end
+```
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
