@@ -34,7 +34,16 @@ group :development, :test do
     gem "launchy"
     # On chapter 9, Speedng up specs
     gem "guard-rspec"
+    gem 'spring-commands-rspec'
 end
 ```
+
+To run the automatic test:
+```ruby
+guard
+# Then press return to run all the test
+```
+
+
 
 
