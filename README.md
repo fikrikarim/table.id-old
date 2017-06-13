@@ -2,8 +2,13 @@
 
 ## Server
 
-DigitalOcean Using this tutorial [Deploying a Rails App on Ubuntu 14.04 with Capistrano, Nginx, and Puma
-](https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma)
+DigitalOcean Using this tutorial [Deploying a Rails App on Ubuntu 14.04 with Capistrano, Nginx, and Puma](https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma)
+
+SSL[Let's Encrypt](https://certbot.eff.org/#ubuntuxenial-nginx)  
+Renewal:
+```ruby
+certbot renew --dry-run
+```
 
 ## Installing
 
@@ -49,6 +54,9 @@ guard
 # Then press return to run all the test
 ```
 
+## Bug
 
-
+- Hardcoded SECRET_KEY_BASE in secrets.yml
+- Hardcoded postgresql password in secrets.yml
+- Not setting firewall
 
