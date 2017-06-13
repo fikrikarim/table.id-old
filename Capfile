@@ -10,6 +10,9 @@ require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'capistrano/puma'
 
+# Bug on https://stackoverflow.com/questions/43014993/dont-know-how-to-build-task-start-when-run-cap-production-deploy-for-capist
+install_plugin Capistrano::Puma
+
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
