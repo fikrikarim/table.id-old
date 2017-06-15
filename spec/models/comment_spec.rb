@@ -6,9 +6,9 @@ RSpec.describe Comment, type: :model do
     expect(build(:comment)).to be_valid
   end
 
-  it "is invalid without title" do
+  it "is invalid without text" do
     comment = build(:comment, text: nil)
     comment.valid?
-    expect(comment.errors[:title]).to include("can't be blank")
+    expect(comment.errors[:text]).to include("can't be blank")
   end
 end
