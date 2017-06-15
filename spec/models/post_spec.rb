@@ -18,9 +18,9 @@ RSpec.describe Post, type: :model do
       expect(post.errors[:text]).to include("can't be blank")
   end
 
-  # it "is invalid without user" do
-  #   post = build(:post, user: nil)
-  #   post.valid?
-  #   expect(post.errors[:user]).to include("must exist")
-  # end
+  it "is invalid without user" do
+    post = build(:post, user: nil)
+    post.valid?
+    expect(post.errors[:user]).to include("must exist")
+  end
 end
