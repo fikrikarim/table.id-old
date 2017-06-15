@@ -57,6 +57,12 @@ guard
 # Then press return to run all the test
 ```
 
+## Application
+
+### Authentication
+- Install devise using this [tutorial](https://github.com/plataformatec/devise#getting-started).
+- 
+
 ## Todo
 
 - Logo
