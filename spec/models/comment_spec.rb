@@ -11,4 +11,10 @@ RSpec.describe Comment, type: :model do
     comment.valid?
     expect(comment.errors[:text]).to include("can't be blank")
   end
+
+  it "is invalid without user" do
+    comment = build(:comment, user: nil)
+    comment.valid?
+    expect(comment.errors[:user]).to include("must exist")
+  end
 end
