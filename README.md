@@ -10,6 +10,9 @@ Renewal:
 certbot renew --dry-run
 ```
 
+### nginx configuration
+TODO
+
 ## Installing
 
 - Ruby version:
@@ -53,6 +56,20 @@ To run the automatic test:
 guard
 # Then press return to run all the test
 ```
+
+## Todo
+
+- Logo
+- Favicon
+
+- Ensure you have flash messages in app/views/layouts/application.html.erb.
+ For example:
+ ```ruby
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+ ```
+- Confirmable email
+
 
 ## Bug
 
