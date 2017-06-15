@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
 
-  context "associations" do
-    should belongs_to(:user)
-  end
-
   it "is valid with all parameters" do
     expect(build(:post)).to be_valid
   end
