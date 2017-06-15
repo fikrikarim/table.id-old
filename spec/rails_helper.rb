@@ -32,6 +32,7 @@ RSpec.configure do |config|
 
   # Use factory girl shortcut syntax
   config.include FactoryGirl::Syntax::Methods
+
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.

@@ -57,11 +57,24 @@ guard
 # Then press return to run all the test
 ```
 
+### Testing Syntax
+
+- [Shoulda gem](https://github.com/thoughtbot/shoulda).
+```ruby
+context "associations" do
+  should have_many(:posts)
+end
+```
+
 ## Application
 
 ### Authentication
 - Install devise using this [tutorial](https://github.com/plataformatec/devise#getting-started).
-- 
+
+### Model
+
+#### Post
+
 
 ## Todo
 
