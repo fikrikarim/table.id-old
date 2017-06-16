@@ -7,15 +7,16 @@
     <!-- Navigation -->
     <nav class="mdl-navigation">
       <% if user_signed_in? %>
-        <%= current_user.username %>
         <!-- Right aligned menu below button -->
         <button id="demo-menu-lower-right"
-                class="mdl-button mdl-js-button mdl-button--icon">
-          <i class="material-icons">more_vert</i>
+                class="mdl-button mdl-js-button mdl-color-text--white lowercase">
+        <%= current_user.username %>
+          <i class="material-icons">arrow_drop_down</i>
         </button>
+
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
             for="demo-menu-lower-right">
-          <li class="mdl-menu__item">Some Action</li>
+            <%= link_to "Logout", destroy_user_session_path, class: "mdl-menu__item", method: :delete %>
         </ul>
       <% else %>
         <%= button_to "Login", new_user_session_path, class: "mdl-button mdl-js-button mdl-color-text--white" %>

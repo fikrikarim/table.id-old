@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.lowercase {
+  text-transform: lowercase !important;
+}
