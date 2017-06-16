@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  # Add username to devise
   before_action :configure_permitted_parameters, if: :devise_controller?
   attr_accessor :login
 
