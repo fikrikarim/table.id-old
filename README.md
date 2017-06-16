@@ -71,6 +71,11 @@ end
 ### Authentication
 - Install devise using this [tutorial](https://github.com/plataformatec/devise#getting-started).
 
+- Add username using this [tutorial](https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address).
+
+- TODO [Allow users to recover their password or confirm their account using their username](https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address#allow-users-to-recover-their-password-or-confirm-their-account-using-their-username).
+- 
+
 ### Model
 
 ### Post

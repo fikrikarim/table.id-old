@@ -14,17 +14,16 @@
 
   <div class="post-title">
     <span class="mdl-typography--subhead">
-      [OSN Story] Perjuangan Keras Yang Membanggakan Kedua Orang Tua
+      <%= @post.title %>
     </span>
   </div>
 
   <div class="post-attributes mdl-typography--caption-color-contrast">
     <span>
-      Dipost 3 jam yang lalu oleh <span>Jamal</span>
+      Dipost 3 jam yang lalu oleh <span><%= @post.user.username %></span>
     </span>
       <br>
     <span>8 komentar</span>
-    <span>Laporkan</span>
   </div>
 
 </div>
