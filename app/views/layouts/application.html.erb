@@ -19,7 +19,13 @@
       <%= render "layouts/navbar" %>
       <main class="mdl-layout__content">
         <div class="page-content">
-          <%= yield %>
+          <div class="mdl-grid">
+            <div class="mdl-layout-spacer"></div>
+            <div class="mdl-cell mdl-cell--8-col">
+              <%= yield %>
+            </div>
+            <div class="mdl-layout-spacer"></div>
+          </div>
         </div>
       </main>
     </div>
