@@ -17,3 +17,21 @@
 .lowercase {
   text-transform: lowercase !important;
 }
+
+.post-number {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  float: left;
+}
+
+.post-container {
+  height: 80px;
+}
+.post-vote {
+  width: 30px;
+  float: left;
+  text-align: center;
+}
+.post-title {
+  padding-top: 10px;
+}
