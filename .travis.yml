@@ -5,3 +5,9 @@ rvm:
 notifications:
   email:
     on_success: change
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database tableid_test;' -U postgres
