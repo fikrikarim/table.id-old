@@ -13,6 +13,8 @@ class User < ApplicationRecord
       :case_sensitive => false
   } # etc.
 
+  acts_as_voter
+
   validate :validate_username
   attr_accessor :login
 
