@@ -97,6 +97,9 @@ end
     <p class="alert"><%= alert %></p>
  ```
 - Confirmable email
+- Instant update vote system
+- Remove change upvote seed
+- Feature specs!!!
 
 
 ## Bug
