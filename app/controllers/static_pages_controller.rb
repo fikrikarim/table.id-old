@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @post = Post.first
+    @posts = Post.all
   end
 
 end
