@@ -25,7 +25,7 @@
         <%= time_ago_in_words(post.created_at) %> ago by <span><%= post.user.username %></span>
       </span>
         <br>
-      <span>8 comments</span>
+      <span><%= post.comment.size %> comments</span>
     </div>
   </div>
 </div>

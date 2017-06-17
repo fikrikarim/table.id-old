@@ -86,7 +86,9 @@ Post.all.each do |post|
 end
 
 Post.all.each do |post|
-  Comment.create! text: "test comment", user: User.first, post: post
+  rand(50).times {
+    Comment.create! text: "test comment", user: User.first, post: post
+  }
 end
 
 comment1 = Comment.create! text: "test comment",

@@ -17,4 +17,7 @@ RSpec.describe Comment, type: :model do
     comment.valid?
     expect(comment.errors[:user]).to include("must exist")
   end
+
+  pending "test the relationship with User"
+  pending "test the relationship with Post"
 end
