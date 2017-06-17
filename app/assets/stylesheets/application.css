@@ -27,13 +27,20 @@
   left: -8px;
 }
 
-.vote-icon{
+.vote-icon-up{
   font-size: 36px !important;
 }
+
+.vote-icon-down{
+  font-size: 36px !important;
+  position: relative;
+  top: -18px;
+}
+
 .vote-number {
   font-size: 14px !important;
   position: relative;
-  top: -7px;
+  top: -10px;
   left: 4px;
 }
 
@@ -42,12 +49,14 @@
 }
 .post-vote {
   width: 30px;
+  height: 50px;
   padding-right: 4px;
   float: left;
   text-align: center;
   position: relative;
-  top: -7px;
+  top: -10px;
   left: -9px;
+
 }
 .post-title {
   line-height: 0.5 !important;
