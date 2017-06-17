@@ -1,1 +1,3 @@
-<%= render "shared/post", post: @post%>
+<% if Post.first %>
+  <%= render "shared/post", post: @post%>
+<% end %>
