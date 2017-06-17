@@ -85,15 +85,17 @@ Post.all.each do |post|
   post.save!
 end
 
+# To be deleted
+Post.all.each do |post|
+  post.cached_votes_score = rand(200)
+  post.save!
+end
+
 Post.all.each do |post|
   rand(50).times {
     Comment.create! text: "test comment", user: User.first, post: post
   }
 end
-
-comment1 = Comment.create! text: "test comment",
-                            user: user1,
-                            post: post1
 
 
 
