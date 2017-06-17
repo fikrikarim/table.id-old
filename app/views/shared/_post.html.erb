@@ -4,9 +4,10 @@
   </div>
 
   <div class="post-vote mdl-typography--caption-color-contrast">
+    <%= button_to "Like", upvote_post_path(post), class: 'vote', method: :put, remote: true %>
     <i class="material-icons vote-icon-up">arrow_drop_up</i>
     <span class="vote-number">
-      1000
+      <%= post.cached_votes_score %>
     </span>
     <i class="material-icons vote-icon-down">arrow_drop_down</i>
   </div>
