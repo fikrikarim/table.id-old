@@ -19,10 +19,10 @@
 
     <div class="post-attributes mdl-typography--caption-color-contrast">
       <span>
-        Dipost 3 jam yang lalu oleh <span><%= post.user.username %></span>
+        <%= time_ago_in_words(post.created_at) %> ago by <span><%= post.user.username %></span>
       </span>
         <br>
-      <span>8 komentar</span>
+      <span>8 comments</span>
     </div>
   </div>
 </div>

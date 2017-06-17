@@ -58,9 +58,11 @@ post3 = Post.create! title: "Planet baru yang sangat mirip bumi ditemukan",
                     text: "Ini ceritaku, mana ceritamu",
                     user: user3
 
+
 post4 = Post.create! title: "[OSN Story] Mencari Ridho Tuhan",
                     text: "Ini ceritaku, mana ceritamu",
                     user: user4
+
 
 post5 = Post.create! title: "[OSN Story] Kenangan yang paling indah disaat SMA",
                     text: "Ini ceritaku, mana ceritamu",
@@ -77,4 +79,11 @@ post7 = Post.create! title: "[OSN Story] Provinsi aja ngga lolos",
 post8 = Post.create! title: "[OSN Story] Mencari Ridho Tuhan",
                     text: "Ini ceritaku, mana ceritamu",
                     user: user8
+
+Post.all.each do |post|
+  post.created_at = rand(1.days).seconds.ago
+  post.save!
+end
+
+
 
