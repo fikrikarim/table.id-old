@@ -85,5 +85,15 @@ Post.all.each do |post|
   post.save!
 end
 
+Post.all.each do |post|
+  Comment.create! text: "test comment", user: User.first, post: post
+end
+
+comment1 = Comment.create! text: "test comment",
+                            user: user1,
+                            post: post1
+
+
+
 
 
