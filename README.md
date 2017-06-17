@@ -76,6 +76,8 @@ end
 - TODO [Allow users to recover their password or confirm their account using their username](https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address#allow-users-to-recover-their-password-or-confirm-their-account-using-their-username).
 - 
 
+### Act as viewable
+
 ### Model
 
 ### Post
