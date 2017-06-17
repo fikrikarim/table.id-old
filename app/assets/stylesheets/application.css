@@ -29,10 +29,12 @@
 
 .vote-icon-up{
   font-size: 36px !important;
+  color: rgba(0,0,0,.87);
 }
 
 .vote-icon-down{
   font-size: 36px !important;
+  color: rgba(0,0,0,.87);
   position: relative;
   top: -18px;
 }
