@@ -4,25 +4,25 @@
   </div>
 
   <div class="post-vote mdl-typography--caption-color-contrast">
-    <i class="material-icons">keyboard_arrow_up</i>
-    <span>
-      7
-    </span>
-    <i class="material-icons">keyboard_arrow_down</i>
-  </div>
-
-  <div class="post-title">
-    <span class="mdl-typography--subhead">
-      <%= post.title %>
+    <i class="material-icons vote-icon">arrow_drop_up</i>
+    <span class="vote-number">
+      1000
     </span>
   </div>
 
-  <div class="post-attributes mdl-typography--caption-color-contrast">
-    <span>
-      Dipost 3 jam yang lalu oleh <span><%= post.user.username %></span>
-    </span>
-      <br>
-    <span>8 komentar</span>
-  </div>
+  <div class="post-title-and-attributes">
+    <div class="">
+      <span class="post-title mdl-typography--subhead">
+        <%= post.title %>
+      </span>
+    </div>
 
+    <div class="post-attributes mdl-typography--caption-color-contrast">
+      <span>
+        Dipost 3 jam yang lalu oleh <span><%= post.user.username %></span>
+      </span>
+        <br>
+      <span>8 komentar</span>
+    </div>
+  </div>
 </div>

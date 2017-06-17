@@ -19,19 +19,42 @@
 }
 
 .post-number {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 25px;
   float: left;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  left: -8px;
+}
+
+.vote-icon{
+  font-size: 36px !important;
+}
+.vote-number {
+  font-size: 14px !important;
+  position: relative;
+  top: -7px;
+  left: 4px;
 }
 
 .post-container {
-  height: 80px;
+  padding-bottom: 10px;
 }
 .post-vote {
   width: 30px;
+  padding-right: 4px;
   float: left;
   text-align: center;
+  position: relative;
+  top: -7px;
+  left: -9px;
 }
 .post-title {
-  padding-top: 10px;
+  line-height: 0.5 !important;
+}
+
+.post-title-and-attributes {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
