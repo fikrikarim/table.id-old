@@ -7,7 +7,7 @@
     <%= link_to upvote_post_path(post), class: 'vote-link-up', method: :put, remote: true do %>
       <i class="material-icons vote-icon-up">arrow_drop_up</i>
     <% end %>
-    <span class="vote-number"><%= post.cached_votes_score %></span>
+    <span class="vote-number data-id="<%= post.id %>""><%= post.cached_votes_score %></span>
     <%= link_to downvote_post_path(post), class: 'vote-link-up', method: :put, remote: true do %>
       <i class="material-icons vote-icon-down">arrow_drop_down</i>
     <% end %>

@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   before_action :authenticate_user!, only: [:upvote, :downvote]
 
   def home
-    @posts = Post.all
+    @posts = Post.all.order(cached_votes_score: "desc")
   end
 
   def upvote
@@ -10,9 +10,7 @@ class StaticPagesController < ApplicationController
     @post.upvote_from current_user
 
     if request.xhr?
-      head :ok
-    else
-      redirect_to root_path
+      render json: { id: params[:id] }
     end
   end
 
@@ -22,8 +20,6 @@ class StaticPagesController < ApplicationController
 
     if request.xhr?
       head :ok
-    else
-      redirect_to root_path
     end
   end
 
