@@ -69,3 +69,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
+.login-button {
+  padding: 0px !important;
+}

@@ -6,6 +6,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'capybara/poltergeist'
 
 # Load support files
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -33,8 +34,12 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # Add LoginMacros
-  config.include LoginMacros
+  config.include LoginMacros, type: :feature
   Capybara.default_max_wait_time = 5
+  Capybara.javascript_driver = :poltergeist
+  Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new(app, {js_errors: false})
+  end
 
   # Use factory girl shortcut syntax
   config.include FactoryGirl::Syntax::Methods

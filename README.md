@@ -57,6 +57,8 @@ guard
 # Then press return to run all the test
 ```
 
+- Use phantom.js as javascript driver
+
 ### Testing Syntax
 
 - [Shoulda gem](https://github.com/thoughtbot/shoulda).
