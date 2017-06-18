@@ -29,7 +29,6 @@ feature 'home' do
       visit root_path
       click_link("upvote-#{post.id}")
       expect(page).to have_current_path(new_user_session_path)
-      save_and_open_page
 
     end
 
