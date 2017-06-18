@@ -98,10 +98,12 @@ end
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
  ```
+- 
 - Confirmable email
 - Instant update vote system
 - Remove change upvote seed
-- Feature specs!!!
+- [ ] Feature specs!!!
+- [ ] 
 
 
 ## Bug
@@ -109,4 +111,6 @@ end
 - Hardcoded SECRET_KEY_BASE in secrets.yml
 - Hardcoded postgresql password in secrets.yml
 - Not setting firewall
+- Devise, when error occur while signing up, will redirect to post instead of the sign up link
+- 
 
