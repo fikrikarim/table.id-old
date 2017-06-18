@@ -20,6 +20,11 @@
   text-decoration: none !important;
 }
 
+.upvote-clicked {
+  font-size: 36px !important;
+  color: rgb(105,240,174) !important;
+}
+
 .devise-errors h2 {
   font-size: 16px;
   line-height: 16px;
@@ -83,6 +88,7 @@
 .post-container {
   padding-bottom: 10px;
 }
+
 .post-vote {
   width: 30px;
   height: 50px;
@@ -94,6 +100,7 @@
   left: -9px;
 
 }
+
 .post-title {
   line-height: 0.5 !important;
 }
