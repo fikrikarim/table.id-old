@@ -1,41 +1,41 @@
 <div class="mdl-cell--4-col-desktop mdl-cell--4-offset-desktop">
 
-<h2 class="mdl-typography--display-1">Login</h2>
+  <h2 class="mdl-typography--display-1">Login</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <p class="mdl-typography--body-2-color-contrast"><%= notice %></p>
-  <p class="mdl-typography--body-2-color-contrast"><%= alert %></p>
+    <p class="mdl-typography--body-2-color-contrast"><%= notice %></p>
+    <p class="mdl-typography--body-2-color-contrast"><%= alert %></p>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <%= f.label :Username_Or_Email, class: "mdl-textfield__label" %>
-    <%= f.text_field :login, class: "mdl-textfield__input" %>
-  </div>
-
-  <br>
-
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <%= f.label :password, class: "mdl-textfield__label" %>
-    <%= f.password_field :password, class: "mdl-textfield__input", autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-      <%= f.check_box :remember_me, class: "mdl-checkbox__input" %>
-      <%= f.label :remember_me, class: "mdl-checkbox__label" %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.label :Username_Or_Email, class: "mdl-textfield__label" %>
+      <%= f.text_field :login, class: "mdl-textfield__input" %>
     </div>
-  <% end -%>
+
+    <br>
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.label :password, class: "mdl-textfield__label" %>
+      <%= f.password_field :password, class: "mdl-textfield__input", autocomplete: "off" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+        <%= f.check_box :remember_me, class: "mdl-checkbox__input" %>
+        <%= f.label :remember_me, class: "mdl-checkbox__label" %>
+      </div>
+    <% end -%>
+
+    <br>
+    <br>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent" %>
+    </div>
+  <% end %>
 
   <br>
-  <br>
 
-  <div class="actions">
-    <%= f.submit "Log in", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent" %>
-  </div>
-<% end %>
-
-<br>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
 
 </div>
