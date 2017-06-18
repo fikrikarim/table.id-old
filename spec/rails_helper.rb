@@ -7,6 +7,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/poltergeist'
+require 'faker'
+
 
 # Load support files
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -38,6 +40,8 @@ RSpec.configure do |config|
   Capybara.default_max_wait_time = 5
   Capybara.javascript_driver = :poltergeist
 
+  # To use time_ago_in_words
+  config.include ActionView::Helpers::DateHelper
   # Use factory girl shortcut syntax
   config.include FactoryGirl::Syntax::Methods
 

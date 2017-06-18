@@ -44,7 +44,7 @@ feature 'User system' do
       expect(page).to have_content "Welcome! You have signed up successfully."
     end
 
-    pending "User will redirect to sign up path when error occurs" do
+    pending "BUG: User will redirect to sign up path when error occurs" do
       user = build(:user)
       sign_up(user)
 

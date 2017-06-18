@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :post do
     association :user
-    title "[OSN Story] Kebanggaan Orang Tua"
-    text "Jadi ini cerita bagaimana saya bisa membahagiakan orang tua saya."
+    title { Faker::Book.title }
+    text { Faker::Hacker.say_something_smart }
   end
 end
