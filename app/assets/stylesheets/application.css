@@ -20,11 +20,30 @@
   text-decoration: none !important;
 }
 
+.login-layout {
+  position: relative;
+}
+
+.signup-layout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+}
+
+.signup-button {
+  margin: 0 auto;
+}
+
 .lowercase {
   text-transform: lowercase !important;
 }
 
 .grey-color a {
+  color: rgba(0,0,0,.87) !important;
+}
+
+.grey-color {
   color: rgba(0,0,0,.87) !important;
 }
 

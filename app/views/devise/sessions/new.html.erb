@@ -1,3 +1,5 @@
+<div class="mdl-grid">
+
 <div class="mdl-cell--4-col-desktop mdl-cell--4-offset-desktop">
 
   <h2 class="mdl-typography--display-1">Login</h2>
@@ -36,6 +38,13 @@
 
   <br>
 
-  <%= render "devise/shared/links" %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name), class: "grey-color" %>
+
+  <hr>
+
+  <%= button_to "Sign up", new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent signup-button", method: :get%>
+
+</div>
+
 
 </div>
