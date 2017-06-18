@@ -9,7 +9,6 @@ module LoginMacros
     fill_in 'user_password', with: user.password
 
     find_button('Log in').click
-    expect(page).to have_current_path(root_path)
   end
 
   def login_with_email(user)
@@ -21,6 +20,5 @@ module LoginMacros
     fill_in 'user_password', with: user.password
 
     click_button 'Log in'
-    expect(page).to have_current_path(root_path)
   end
 end
