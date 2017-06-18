@@ -20,6 +20,11 @@
   text-decoration: none !important;
 }
 
+.devise-errors h2 {
+  font-size: 16px;
+  line-height: 16px;
+}
+
 .login-layout {
   position: relative;
 }

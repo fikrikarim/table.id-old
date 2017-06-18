@@ -3,7 +3,9 @@
   <h2 class="mdl-typography--display-1">Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <span class="devise-errors">
     <%= devise_error_messages! %>
+    </span>
 
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <%= f.label :username, class: "mdl-textfield__label" %>
