@@ -1,9 +1,11 @@
+<div class="mdl-cell--4-col-desktop mdl-cell--4-offset-desktop">
+
 <h2 class="mdl-typography--display-1">Login</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <p class="mdl-typography--body-2-color-contrast"><%= notice %></p>
+  <p class="mdl-typography--body-2-color-contrast"><%= alert %></p>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <%= f.label :Username_Or_Email, class: "mdl-textfield__label" %>
@@ -35,3 +37,5 @@
 <br>
 
 <%= render "devise/shared/links" %>
+
+</div>
