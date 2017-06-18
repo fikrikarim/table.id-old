@@ -2,6 +2,11 @@ require 'rails_helper'
 
 feature 'Navbar', type: :feature do
 
+  scenario "Root path show Table.id link to root" do
+    visit root_path
+    expect(page).to have_link "Table.id", href: root_path
+  end
+
   scenario "Show 'login' when users not logged in and show 'username' when logged in" do
     user = create(:user)
     visit root_path
