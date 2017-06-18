@@ -37,9 +37,6 @@ RSpec.configure do |config|
   config.include LoginMacros, type: :feature
   Capybara.default_max_wait_time = 5
   Capybara.javascript_driver = :poltergeist
-  Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app, {js_errors: false})
-  end
 
   # Use factory girl shortcut syntax
   config.include FactoryGirl::Syntax::Methods
