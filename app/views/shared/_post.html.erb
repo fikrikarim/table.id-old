@@ -17,9 +17,21 @@
       <% end %>
 
     <% end %>
+
     <span class="vote-number" id="<%= post.id %>"><%= post.cached_votes_score %></span>
-    <%= link_to downvote_post_path(post), class: 'vote-link-down', id: "downvote-#{post.id}", method: :put, remote: true do %>
-      <i class="material-icons vote-icon-down">arrow_drop_down</i>
+
+    <% if current_user && current_user.voted_down_on?(post) %>
+
+      <span class="downvote-clicked">
+        <i class="material-icons vote-icon-down">arrow_drop_down</i>
+      </span>
+
+    <% else %>
+
+      <%= link_to downvote_post_path(post), class: 'vote-link-down', id: "downvote-#{post.id}", method: :put, remote: true do %>
+        <i class="material-icons vote-icon-down">arrow_drop_down</i>
+      <% end %>
+
     <% end %>
   </div>
 

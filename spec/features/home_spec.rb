@@ -50,7 +50,7 @@ feature 'home' do
 
   context "Vote system javascript" do
 
-    scenario "The upvote button when clicked change color and cannot be click again", js: true do
+    scenario "The upvote button when clicked change color and will persist after reload page", js: true do
       post = create(:post)
       user = create(:user)
       login(user)
@@ -64,7 +64,6 @@ feature 'home' do
       # Rails cannot find Post.find(1) if not reloaded, not sure why
       post.reload
       expect(page).to have_css("a.upvote-clicked")
-      expect(page).not_to have_link("", href: upvote_post_path(post))
 
       # Reload page and check if the change persist
       page.evaluate_script("window.location.reload()")
@@ -72,15 +71,34 @@ feature 'home' do
       expect(page).not_to have_link("", href: upvote_post_path(post))
     end
 
-    scenario "The vote number increase when the upvote button is clicked", js: true do
+    scenario "The downvote button when clicked change color and will persist after reload page", js: true do
       post = create(:post)
       user = create(:user)
       login(user)
       visit root_path
-      find("a.vote-link-up").trigger('click')
-      expect(page).to have_css("#vote-number", text: (post.cached_votes_score + 1))
+      expect(page).not_to have_css("i.upvote-clicked")
+      # We implement the disable link using changin href:
+      # to "javascript: void(0);"
+      expect(page).to have_link("", href: downvote_post_path(post))
+      visit root_path
+      find("a.vote-link-down").trigger('click')
+      # Rails cannot find Post.find(1) if not reloaded, not sure why
+      post.reload
+      expect(page).to have_css("a.downvote-clicked")
+
+      # Reload page and check if the change persist
+      page.evaluate_script("window.location.reload()")
+      expect(page).to have_css("a.downvote-clicked")
+      expect(page).not_to have_link("", href: downvote_post_path(post))
     end
 
-    pending "The downvote button when clicked change color and cannot be click again"
+    pending "The vote number increase when the upvote button is clicked"
+      # post = create(:post)
+      # user = create(:user)
+      # login(user)
+      # visit root_path
+      # find("a.vote-link-up").trigger('click')
+      # expect(page).to have_css("#vote-number", text: (post.cached_votes_score + 1))
+
   end
 end

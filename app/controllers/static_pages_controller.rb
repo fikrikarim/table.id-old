@@ -8,7 +8,6 @@ class StaticPagesController < ApplicationController
     auth_ajax
     @post = Post.find(params[:id])
     @post.upvote_from current_user
-
   end
 
   def downvote
