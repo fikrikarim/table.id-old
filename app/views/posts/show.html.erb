@@ -1,3 +1,9 @@
-<%= @post.title %>
-<%= @post.user.username %>
-<%= @post.text %>
+<span class="mdl-typography--headline">
+  <%= @post.title %>
+</span>
+<p class="mdl-typography--body-2-color-contrast">
+  by <%= @post.user.username %>
+</p>
+<p>
+  <%= @post.text %>
+</p>
