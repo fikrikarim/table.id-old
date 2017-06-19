@@ -1,5 +1,5 @@
 <%= render "shared/post", post: @post, index: nil%>
 
-<p>
+<div class="markdown-render">
   <%= markdown(@post.text) %>
-</p>
+</div>

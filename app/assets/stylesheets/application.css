@@ -118,6 +118,9 @@
   overflow-y: hidden;
 }
 
+.markdown-render p {
+}
+
 .login-button {
   padding: 0px !important;
   color: rgb(66,66,66) !important;
