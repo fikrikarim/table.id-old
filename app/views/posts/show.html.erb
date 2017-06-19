@@ -1,9 +1,5 @@
-<span class="mdl-typography--headline">
-  <%= @post.title %>
-</span>
-<p class="mdl-typography--body-2-color-contrast">
-  by <%= @post.user.username %>
-</p>
+<%= render "shared/post", post: @post, index: nil%>
+
 <p>
   <%= markdown(@post.text) %>
 </p>

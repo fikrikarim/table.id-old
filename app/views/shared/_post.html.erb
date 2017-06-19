@@ -1,7 +1,9 @@
 <div class="post-container">
-  <div class="post-number mdl-typography--caption-color-contrast">
-    <span><%= "#{index}." %></span>
-  </div>
+  <% if !index.nil? %>
+    <div class="post-number mdl-typography--caption-color-contrast">
+      <span><%= "#{index}." %></span>
+    </div>
+  <% end %>
 
   <div class="post-vote mdl-typography--caption-color-contrast">
     <% if current_user && current_user.voted_up_on?(post) %>
