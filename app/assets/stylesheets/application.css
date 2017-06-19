@@ -20,8 +20,7 @@
   text-decoration: none !important;
 }
 
-.upvote-clicked {
-  font-size: 36px !important;
+.upvote-clicked i {
   color: rgb(105,240,174) !important;
 }
 

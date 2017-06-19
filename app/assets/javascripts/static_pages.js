@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  $('.vote-icon-up').click(function(){
-    console.log('test')
+  $('.vote-link-up').click(function(e){
     $(this).toggleClass('upvote-clicked');
+    $(this).off("click").attr('href', "javascript: void(0);");
   });
 });

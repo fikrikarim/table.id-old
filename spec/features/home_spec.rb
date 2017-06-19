@@ -36,6 +36,7 @@ feature 'home' do
       user = create(:user)
       login(user)
       visit root_path
+
       expect {
         click_link("upvote-#{post.id}")
       }.to change{post.reload.cached_votes_score}.by(1)
@@ -47,21 +48,39 @@ feature 'home' do
 
   end
 
-  context "Vote system javascript", js: true do
+  context "Vote system javascript" do
 
-    scenario "The upvote button when clicked change color and cannot be click again" do
+    scenario "The upvote button when clicked change color and cannot be click again", js: true do
       post = create(:post)
       user = create(:user)
       login(user)
       visit root_path
-      expect(page).not_to have_css("a#upvote-clicked")
-      # click_link("upvote-#{post.id}") wasn't working because overlapping with other element
-      # https://github.com/teampoltergeist/poltergeist/issues/60
-      find("#upvote-#{post.id}").trigger('click')
-      expect(page).to have_css("a#upvote-clicked")
+      expect(page).not_to have_css("i.upvote-clicked")
+      # We implement the disable link using changin href:
+      # to "javascript: void(0);"
+      expect(page).to have_link("", href: upvote_post_path(post))
+      visit root_path
+      find("a.vote-link-up").trigger('click')
+      # Rails cannot find Post.find(1) if not reloaded, not sure why
+      post.reload
+      expect(page).to have_css("a.upvote-clicked")
+      expect(page).not_to have_link("", href: upvote_post_path(post))
 
+      # Reload page and check if the change persist
+      page.evaluate_script("window.location.reload()")
+      expect(page).to have_css("a.upvote-clicked")
+      expect(page).not_to have_link("", href: upvote_post_path(post))
     end
 
-    pending "The upvote button when clicked change color and cannot be click again"
+    scenario "The vote number increase when the upvote button is clicked", js: true do
+      post = create(:post)
+      user = create(:user)
+      login(user)
+      visit root_path
+      find("a.vote-link-up").trigger('click')
+      expect(page).to have_css("#vote-number", text: (post.cached_votes_score + 1))
+    end
+
+    pending "The downvote button when clicked change color and cannot be click again"
   end
 end
