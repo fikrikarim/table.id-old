@@ -1,3 +1,4 @@
+// 'turbolinks:load' to use with turbolinks
 $(document).on('turbolinks:load', function() {
   $('.vote-link-up').click(function(e){
     $(this).addClass('upvote-clicked');
