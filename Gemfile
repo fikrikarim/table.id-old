@@ -40,6 +40,9 @@ gem 'jquery-rails'
 # dunno why
 gem 'jquery-turbolinks'
 
+# Install new relic
+gem 'newrelic_rpm'
+
 # Install friendlyid to make url prettier
 gem 'friendly_id'
 
