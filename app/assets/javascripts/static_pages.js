@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   $('.vote-link-up').click(function(e){
     $(this).addClass('upvote-clicked');
     // Increase the vote score.

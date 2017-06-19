@@ -37,6 +37,8 @@ gem 'devise'
 
 # Install jquery rails
 gem 'jquery-rails'
+# dunno why
+gem 'jquery-turbolinks'
 
 # Install friendlyid to make url prettier
 gem 'friendly_id'

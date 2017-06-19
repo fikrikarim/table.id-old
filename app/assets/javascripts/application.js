@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
+//= require turbolinks
 // This needed so turbolink can work with jquery
 document.addEventListener('turbolinks:load', function() {
   componentHandler.upgradeDom();
 });
-//= require turbolinks
+
 
