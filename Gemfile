@@ -38,6 +38,9 @@ gem 'devise'
 # Install jquery rails
 gem 'jquery-rails'
 
+# Install friendlyid to make url prettier
+gem 'friendly_id'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

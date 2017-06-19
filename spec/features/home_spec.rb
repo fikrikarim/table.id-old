@@ -10,6 +10,7 @@ feature 'home' do
       expect(page).to have_content("1.")
       expect(page).to have_content(post.cached_votes_score)
       expect(page).to have_content(post.user.username)
+      expect(page).to have_link(post.title, href: post_path(post))
     end
 
     pending "create link to post"

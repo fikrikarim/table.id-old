@@ -6,13 +6,13 @@ class StaticPagesController < ApplicationController
 
   def upvote
     auth_ajax
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     @post.upvote_from current_user
   end
 
   def downvote
     auth_ajax
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     @post.downvote_from current_user
 
   end
