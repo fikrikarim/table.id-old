@@ -5,5 +5,5 @@
   by <%= @post.user.username %>
 </p>
 <p>
-  <%= @post.text %>
+  <%= markdown(@post.text) %>
 </p>

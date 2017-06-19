@@ -41,6 +41,9 @@ gem 'jquery-rails'
 # Install friendlyid to make url prettier
 gem 'friendly_id'
 
+# Install redcarpet for markdown parser
+gem 'redcarpet'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
