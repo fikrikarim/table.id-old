@@ -58,6 +58,7 @@
 
 .grey-color {
   color: rgba(0,0,0,.87) !important;
+  text-decoration: none;
 }
 
 .post-number {
@@ -104,8 +105,11 @@
 
 }
 
-.post-title {
+.post-title a {
   line-height: 0.5 !important;
+  color: rgba(0,0,0,.87) !important;
+  text-decoration: none !important;
+  font-weight: 400 !important;
 }
 
 .post-title-and-attributes {
