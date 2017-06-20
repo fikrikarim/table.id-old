@@ -2,7 +2,9 @@
 
   <%= render 'shared/votebutton', source: comment %>
 
-  <%= comment.text %>
-  <%= comment.user.username %>
-  <%= time_ago_in_words(comment.created_at) %>
+  <div class="comment-text-container">
+    <%= comment.text %>
+    <%= comment.user.username %>
+    <%= time_ago_in_words(comment.created_at) %>
+  </div>
 </div>

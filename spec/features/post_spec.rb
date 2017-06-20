@@ -22,5 +22,7 @@ feature 'Post' do
     end
   end
 
+  pending "Comment vote system test............... Copy from post vote spec"
+
 
 end
