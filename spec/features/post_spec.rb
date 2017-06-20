@@ -25,14 +25,27 @@ feature 'Post' do
   pending "User can reply to the post"
     # expect(page).to have_content(new_post_comment_path(post))
 
-  scenario "User can reply to other comments and will add parent using ancestry gem" do
+  scenario "Unlogged user cannot comments" do
     post = create(:post)
     comment = create(:comment, post_id: post.id)
     visit post_path(post)
     expect(page).to have_link("Reply", href: new_comment_path(post_id: post.id, parent_id: comment))
     click_link("Reply")
+    expect(page).to have_current_path(new_user_session_path)
+  end
+
+  scenario "Logged User can reply to other comments and will add parent using ancestry gem" do
+    post = create(:post)
+    comment = create(:comment, post_id: post.id)
+    user = create(:user)
+    login(user)
+    visit post_path(post)
+    expect(comment.has_children?).to eq(false)
+    expect(page).to have_link("Reply", href: new_comment_path(post_id: post.id, parent_id: comment))
+    click_link("Reply")
     fill_in "comment_text", with: "Test reply"
     click_button("Submit")
+    expect(comment.has_children?).to eq(true)
   end
 
   pending "Only loggedin user can comments"

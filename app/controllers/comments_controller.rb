@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @comment = Comment.new(post_id: params[:post_id], parent_id: params[:parent_id])
@@ -11,9 +12,9 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.save
     if @comment.save
-      flash[:success] = "Selamat"
-      redirect_to post_path(@post)
+      flash[:success] = "Your comment has been submitted"
     end
+    redirect_to post_path(@post)
   end
 
   private
