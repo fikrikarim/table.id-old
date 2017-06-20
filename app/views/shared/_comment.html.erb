@@ -10,6 +10,6 @@
     </div>
       <%= comment.text %>
       <br>
-      <%= link_to "Reply", new_comment_path(post_id: @post, parent_id: comment) %>
+      <%= link_to "Reply", new_comment_path(post_id: @post.id, parent_id: comment) %>
   </div>
 </div>
