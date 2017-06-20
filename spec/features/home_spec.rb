@@ -13,7 +13,6 @@ feature 'home' do
       expect(page).to have_link(post.title, href: post_path(post))
     end
 
-    pending "create link to post"
     pending "create link to user submitter"
     pending "link to comments"
 
