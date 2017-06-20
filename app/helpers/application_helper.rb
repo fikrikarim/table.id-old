@@ -25,7 +25,10 @@ module ApplicationHelper
     markdown.render(text).html_safe
   end
 
-  def waktu_yang_lalu
-
+  # http://railscasts.com/episodes/262-trees-with-ancestry?view=asciicast
+  def nested_comments(comments)
+    comments.map do |comment, sub_comments|
+      render(comment) + content_tag(:div, nested_comments(sub_comments), :class => "comments-container")
+    end.join.html_safe
   end
 end
