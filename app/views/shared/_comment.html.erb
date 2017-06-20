@@ -8,8 +8,8 @@
         <%= time_ago_in_words(comment.created_at) %> ago by <span><%= comment.user.username %></span>
       </span>
     </div>
-    <%= comment.text %>
-    <%= comment.user.username %>
-    <%= time_ago_in_words(comment.created_at) %>
+      <%= comment.text %>
+      <br>
+      <%= link_to "Reply", new_post_comment_path(@post) %>
   </div>
 </div>

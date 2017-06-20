@@ -16,6 +16,16 @@
 
 .comment-text-container {
   min-height: 60px;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-bottom: 11px;
+}
+
+.comment-text-container a{
+  color: rgba(0,0,0,.87) !important;
+  font-size: 10px;
+  font-weight: 400px;
 }
 
 .title-text {

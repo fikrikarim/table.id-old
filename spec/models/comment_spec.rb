@@ -6,6 +6,10 @@ RSpec.describe Comment, type: :model do
     expect(build(:comment)).to be_valid
   end
 
+  it "is stil valid with all parameters, because we use ancestry to add comments for other comments" do
+    expect(build(:comment, post:nil)).to be_valid
+  end
+
   it "is invalid without text" do
     comment = build(:comment, text: nil)
     comment.valid?

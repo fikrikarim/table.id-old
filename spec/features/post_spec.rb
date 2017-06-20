@@ -22,6 +22,16 @@ feature 'Post' do
     end
   end
 
+  pending "User can reply to the post"
+    # expect(page).to have_content(new_post_comment_path(post))
+
+  scenario "User can reply to other comments and will add parent using ancestry gem" do
+    post = create(:post)
+    comment = create(:comment, post_id: post.id)
+    visit post_path(post)
+    expect(page).to have_link("Reply", href: new_post_comment_path(post, parent_id: comment))
+  end
+
   pending "Comment vote system test............... Copy from post vote spec"
 
 
