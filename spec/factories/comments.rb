@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :comment do
     association :user
     association :post
-    text "Comment yang bagus gan"
+    text { Faker::Hacker.say_something_smart }
   end
 end

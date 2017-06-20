@@ -3,3 +3,9 @@
 <div class="markdown-render">
   <%= markdown(@post.text) %>
 </div>
+
+<div class="comments-container">
+  <% @post.comments.each do |comment| %>
+    <%= render "shared/comment", comment: comment %>
+  <% end %>
+</div>
