@@ -48,8 +48,6 @@ feature 'Post' do
     expect(comment.has_children?).to eq(true)
   end
 
-  pending "Only loggedin user can comments"
-
   pending "Test for error message while submitting comments"
 
   pending "Comment vote system test............... Copy from post vote spec"

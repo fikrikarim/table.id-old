@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.save
     if @comment.save
-      flash[:success] = "Your comment has been submitted"
+      flash[:notice] = "Your comment has been submitted"
     end
     redirect_to post_path(@post)
   end
