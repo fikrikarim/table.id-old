@@ -58,7 +58,7 @@ feature 'home' do
       expect(page).not_to have_css("i.upvote-clicked")
       # We implement the disable link using changin href:
       # to "javascript: void(0);"
-      expect(page).to have_link("", href: upvote_post_path(post))
+      expect(page).to have_link("", href: upvote_post_path(post, post.class.name))
       visit root_path
       find("a.vote-link-up").trigger('click')
       # Rails cannot find Post.find(1) if not reloaded, not sure why
@@ -68,7 +68,7 @@ feature 'home' do
       # Reload page and check if the change persist
       page.evaluate_script("window.location.reload()")
       expect(page).to have_css("a.upvote-clicked")
-      expect(page).not_to have_link("", href: upvote_post_path(post))
+      expect(page).not_to have_link("", href: upvote_post_path(post, post.class.name))
     end
 
     scenario "The downvote button when clicked change color and will persist after reload page", js: true do
@@ -79,7 +79,7 @@ feature 'home' do
       expect(page).not_to have_css("i.upvote-clicked")
       # We implement the disable link using changin href:
       # to "javascript: void(0);"
-      expect(page).to have_link("", href: downvote_post_path(post))
+      expect(page).to have_link("", href: downvote_post_path(post, post.class.name))
       visit root_path
       find("a.vote-link-down").trigger('click')
       # Rails cannot find Post.find(1) if not reloaded, not sure why
@@ -89,7 +89,7 @@ feature 'home' do
       # Reload page and check if the change persist
       page.evaluate_script("window.location.reload()")
       expect(page).to have_css("a.downvote-clicked")
-      expect(page).not_to have_link("", href: downvote_post_path(post))
+      expect(page).not_to have_link("", href: downvote_post_path(post, post.class.name))
     end
 
     pending "The vote number increase when the upvote button is clicked"

@@ -7,7 +7,7 @@
 
   <% else %>
 
-    <%= link_to upvote_post_path(source), class: 'vote-link-up', id: "upvote-#{source.id}", method: :put, remote: true do %>
+    <%= link_to upvote_post_path(source, source.class.name), class: 'vote-link-up', id: "upvote-#{source.id}", method: :put, remote: true do %>
       <i class="material-icons vote-icon-up">arrow_drop_up</i>
     <% end %>
 
@@ -23,7 +23,7 @@
 
   <% else %>
 
-    <%= link_to downvote_post_path(source), class: 'vote-link-down', id: "downvote-#{source.id}", method: :put, remote: true do %>
+    <%= link_to downvote_post_path(source, source.class.name), class: 'vote-link-down', id: "downvote-#{source.id}", method: :put, remote: true do %>
       <i class="material-icons vote-icon-down">arrow_drop_down</i>
     <% end %>
 
