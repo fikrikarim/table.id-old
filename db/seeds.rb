@@ -110,11 +110,11 @@ Post.all.each do |post|
 end
 
 Post.all.each do |post|
+  # Random between 1 and 50
   rand(50).times {
-    Comment.create! text: "test comment", user: User.first, post: post
+    Comment.create! text: Faker::Hacker.say_something_smart, user: User.first, post: post
   }
 end
-
 
 
 

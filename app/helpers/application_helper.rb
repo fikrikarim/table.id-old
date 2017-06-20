@@ -12,7 +12,6 @@ module ApplicationHelper
     extensions = {
       autolink:           true,
       no_intra_emphasis: true,
-      autolink: true,
       tables: true,
       underline: true,
       highlight: true,
