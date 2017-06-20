@@ -70,6 +70,7 @@ group :development, :test do
   gem "launchy"
   gem "guard-rspec"
   gem 'spring-commands-rspec'
+  gem 'simplecov', :require => false
 end
 
   # move listen to global gem
