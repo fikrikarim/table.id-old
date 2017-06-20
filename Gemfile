@@ -49,6 +49,9 @@ gem 'friendly_id'
 # Install redcarpet for markdown parser
 gem 'redcarpet'
 
+# Install ancestry for comment nesting
+gem 'ancestry'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
