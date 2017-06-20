@@ -5,37 +5,7 @@
     </div>
   <% end %>
 
-  <div class="post-vote mdl-typography--caption-color-contrast">
-    <% if current_user && current_user.voted_up_on?(post) %>
-
-      <span class="upvote-clicked">
-        <i class="material-icons vote-icon-up">arrow_drop_up</i>
-      </span>
-
-    <% else %>
-
-      <%= link_to upvote_post_path(post), class: 'vote-link-up', id: "upvote-#{post.id}", method: :put, remote: true do %>
-        <i class="material-icons vote-icon-up">arrow_drop_up</i>
-      <% end %>
-
-    <% end %>
-
-    <span class="vote-number" id="<%= post.id %>"><%= post.cached_votes_score %></span>
-
-    <% if current_user && current_user.voted_down_on?(post) %>
-
-      <span class="downvote-clicked">
-        <i class="material-icons vote-icon-down">arrow_drop_down</i>
-      </span>
-
-    <% else %>
-
-      <%= link_to downvote_post_path(post), class: 'vote-link-down', id: "downvote-#{post.id}", method: :put, remote: true do %>
-        <i class="material-icons vote-icon-down">arrow_drop_down</i>
-      <% end %>
-
-    <% end %>
-  </div>
+  <%= render 'shared/votebutton', source: post %>
 
   <div class="post-title-and-attributes">
     <div class="">

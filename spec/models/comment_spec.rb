@@ -20,4 +20,6 @@ RSpec.describe Comment, type: :model do
 
   pending "test the relationship with User"
   pending "test the relationship with Post"
+
+  pending "ancestry gem test"
 end
