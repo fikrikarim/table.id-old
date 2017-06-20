@@ -29,7 +29,11 @@ feature 'Post' do
     post = create(:post)
     comment = create(:comment, post_id: post.id)
     visit post_path(post)
-    expect(page).to have_link("Reply", href: new_post_comment_path(post, parent_id: comment))
+    expect(page).to have_link("Reply", href: new_comment_path(post_id: post, parent_id: comment))
+    click_link("Reply")
+    fill_in "text", with: "Test reply"
+    click_button("Submit")
+
   end
 
   pending "Comment vote system test............... Copy from post vote spec"
