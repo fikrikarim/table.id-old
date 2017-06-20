@@ -1,7 +1,3 @@
-
-<p class="mdl-typography--body-2-color-contrast"><%= notice %></p>
-<p class="mdl-typography--body-2-color-contrast"><%= alert %></p>
-
 <% if Post.first %>
   <% @posts.each.with_index(1) do |post, index| %>
     <%= render "shared/post", post: post, index: index%>

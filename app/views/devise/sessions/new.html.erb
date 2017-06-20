@@ -4,9 +4,6 @@
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <p class="mdl-typography--body-2-color-contrast"><%= notice %></p>
-    <p class="mdl-typography--body-2-color-contrast"><%= alert %></p>
-
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <%= f.label :Username_Or_Email, class: "mdl-textfield__label" %>
       <%= f.text_field :login, class: "mdl-textfield__input" %>
