@@ -19,6 +19,17 @@
   position: relative !important;
 }
 
+.no-padding {
+  padding: 0 !important;
+}
+.capitalize {
+  /*text-transform: capitalize !important;*/
+}
+
+.mdl-layout__header-row .mdl-navigation__link span {
+  color: white !important;
+}
+
 .mdl-layout-title {
   display: inline !important;
   position: relative;
