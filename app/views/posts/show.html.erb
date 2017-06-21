@@ -4,6 +4,8 @@
   <%= markdown(@post.text) %>
 </div>
 
+<hr>
+
 <%= render 'comments/newcomment', post_id: @post.id %>
 
 <!-- http://railscasts.com/episodes/262-trees-with-ancestry?view=asciicast -->
