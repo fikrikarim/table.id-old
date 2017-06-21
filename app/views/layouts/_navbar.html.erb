@@ -13,19 +13,19 @@
     <nav class="mdl-navigation">
       <% if user_signed_in? %>
         <!-- Right aligned menu below button -->
-        <%= link_to '', class: "mdl-button mdl-js-button mdl-color-text--white  mdl-color-text--white no-padding capitalize" do %>
+        <%= link_to '', class: "mdl-button mdl-js-button mdl-color-text--white  mdl-color-text--white capitalize" do %>
           <i class="material-icons">mode_edit</i>
-
-           <span class="mdl-cell--hide-phone">Submit a post</span>
+           Submit
+           <span class="mdl-cell--hide-phone">a post</span>
         <% end %>
 
         <button id="demo-menu-lower-right"
-                class="mdl-button mdl-js-button mdl-color-text--white lowercase no-padding">
+                class="mdl-button mdl-js-button mdl-color-text--white lowercase login-button">
           <span class="mdl-cell--hide-phone"><%= current_user.username %></span>
           <i class="material-icons">arrow_drop_down</i>
         </button>
 
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect "
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
             for="demo-menu-lower-right">
             <div class="mdl-cell--hide-desktop mdl-cell--hide-tablet">
               <li disabled class="mdl-menu__item "><%= current_user.username %></li>
