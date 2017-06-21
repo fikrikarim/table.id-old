@@ -12,6 +12,7 @@ feature 'Navbar', type: :feature do
     visit root_path
     expect(page).not_to have_content user.username
     expect(page).to have_link "Login", href: new_user_session_path
+    expect(page).to have_link "Sign up", href: new_user_registration_path
     login(user)
 
     expect(page).to have_content user.username
@@ -25,6 +26,7 @@ feature 'Navbar', type: :feature do
     visit root_path
     expect(page).not_to have_content user.username
     expect(page).to have_link "Login", href: new_user_session_path
+    expect(page).to have_link "Sign up", href: new_user_registration_path
     login_with_email(user)
 
     expect(page).to have_content user.username
