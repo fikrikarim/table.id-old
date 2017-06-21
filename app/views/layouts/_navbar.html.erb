@@ -15,15 +15,14 @@
           <i class="material-icons">arrow_drop_down</i>
         </button>
 
-        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect"
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect "
             for="demo-menu-lower-right">
             <%= link_to "Logout", destroy_user_session_path, class: "mdl-menu__item", method: :delete %>
-
         </ul>
       <% else %>
         <%= link_to "Login", new_user_session_path, class: "mdl-button mdl-js-button login-button" %>
       <% end %>
     </nav>
-      <div class="mdl-cell--2-col-desktop"></div>
+    <div class="mdl-cell--2-col-desktop"></div>
   </div>
 </header>
