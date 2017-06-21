@@ -19,6 +19,27 @@
   position: relative !important;
 }
 
+.mdl-layout-title {
+  display: inline !important;
+  position: relative;
+  top: 3.5px;
+}
+
+.title-text {
+  color: white !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+}
+.mdl-layout-icon {
+  height: 42px;
+  width: 42px;
+  padding-right: 5px;
+  overflow: hidden;
+  display: inline !important;
+  z-index: 3;
+  display: block;
+}
+
 .comment-text-container {
   min-height: 60px;
   display: block;
@@ -37,18 +58,12 @@
   font-weight: 400px;
 }
 
-.title-text {
-  color: rgb(66,66,66) !important;
-  font-weight: 400 !important;
-  text-decoration: none !important;
-}
-
 .upvote-clicked i {
-  color: rgb(105,240,174) !important;
+  color: rgb(3, 169, 244) !important;
 }
 
 .downvote-clicked i {
-  color: rgb(105,240,174) !important;
+  color: rgb(255, 87, 34) !important;
 }
 
 .devise-errors h2 {
@@ -146,6 +161,5 @@
 
 .login-button {
   padding: 0px !important;
-  color: rgb(66,66,66) !important;
-
+  color: white !important;
 }
