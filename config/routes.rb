@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  resources :posts, only: [:show]
+  resources :posts, only: [:show, :new, :index, :create]
   resources :comments, only: [:new, :index, :create]
 
   put 'upvote_post/:id/:type' => 'static_pages#upvote', as: :upvote_post

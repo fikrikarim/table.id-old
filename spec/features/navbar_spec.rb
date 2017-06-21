@@ -16,11 +16,10 @@ feature 'Navbar', type: :feature do
     login(user)
 
     expect(page).to have_content user.username
-    expect(page).to have_link "Submit a post"
+    expect(page).to have_link "Submit a post", href: new_post_path
     # expect(page).to have_link "Submit a Post", href: new_user_session_path
     expect(page).not_to have_link "Login", href: new_user_session_path
     expect(page).not_to have_link "Sign up", href: new_user_registration_path
-
   end
 
   pending "Test using mobile layout"

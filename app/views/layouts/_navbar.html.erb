@@ -13,7 +13,7 @@
     <nav class="mdl-navigation">
       <% if user_signed_in? %>
         <!-- Right aligned menu below button -->
-        <%= link_to '', class: "mdl-button mdl-js-button mdl-color-text--white  mdl-color-text--white capitalize" do %>
+        <%= link_to new_post_path, class: "mdl-button mdl-js-button mdl-color-text--white  mdl-color-text--white capitalize" do %>
           <i class="material-icons">mode_edit</i>
            Submit
            <span class="mdl-cell--hide-phone">a post</span>
