@@ -115,8 +115,8 @@
   float: left;
   overflow-x: hidden;
   overflow-y: hidden;
-  position: relative;
-  left: -8px;
+  position: absolute;
+  left: -20px;
 }
 
 .vote-icon-up{
@@ -140,6 +140,8 @@
 
 .post-container {
   padding-bottom: 10px;
+  position: relative;
+  right: -15px;
 }
 
 .post-vote {
