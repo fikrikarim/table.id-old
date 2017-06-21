@@ -45,10 +45,37 @@ feature 'Post' do
     click_link("Reply")
     fill_in "comment_text", with: "Test reply"
     click_button("Submit")
+    expect(page).to have_current_path(post_path(post))
     expect(comment.has_children?).to eq(true)
+    expect(page).to have_content("Test reply")
+    expect(page).to have_css(".nested-comments-container")
   end
 
+  scenario "Unlogged user cannot reply to posts" do
+    post = create(:post)
+    comment = create(:comment, post_id: post.id)
+    visit post_path(post)
+    fill_in "comment_text", with: "Test reply"
+    click_button("Submit")
+    expect(page).to have_current_path(new_user_session_path)
+  end
+
+  scenario "Logged user cannot reply to posts" do
+    post = create(:post)
+    comment = create(:comment, post_id: post.id)
+    user = create(:user)
+    login(user)
+    visit post_path(post)
+    fill_in "comment_text", with: "Test reply"
+    click_button("Submit")
+    expect(page).to have_current_path(post_path(post))
+    expect(page).to have_content("Test reply")
+
+  end
+
+
   pending "Test for showing nested comments"
+  pending "View single thread for comments"
 
   pending "Test for error message while submitting comments"
 
