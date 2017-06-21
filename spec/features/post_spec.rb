@@ -43,6 +43,7 @@ feature 'Post' do
     expect(comment.has_children?).to eq(false)
     expect(page).to have_link("Reply", href: new_comment_path(post_id: post.id, parent_id: comment))
     click_link("Reply")
+    expect(page).to have_content(comment.text)
     fill_in "comment_text", with: "Test reply"
     click_button("Submit")
     expect(page).to have_current_path(post_path(post))

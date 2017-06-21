@@ -1,13 +1,25 @@
-<span class="mdl-typography--subhead">Submit a comment</span>
+
+<%- if controller_name == 'comments' %>
+  <span class="mdl-typography--title">Reply to this comment</span>
+  <br>
+  <br>
+<% else %>
+  <span class="mdl-typography--subhead">Submit a comment</span>
+<% end -%>
+
+<%= render @comment.parent if @comment.parent %>
+
 <%= form_for @comment do |f| %>
   <%= f.hidden_field :parent_id %>
   <%= f.hidden_field :post_id %>
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <%= f.label :Comment, class: "mdl-textfield__label" %>
-    <%= f.text_area :text, :rows => 8, autofocuse: true, class: "mdl-textfield__input" %>
+    <%= f.text_area :text, :rows => 5, autofocuse: true, class: "mdl-textfield__input" %>
   </div>
 
   <div class="actions">
     <%= f.submit "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent" %>
   </div>
+  <br>
+  <br>
 <% end %>
