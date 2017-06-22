@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620085230) do
+ActiveRecord::Schema.define(version: 20170622230137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170620085230) do
     t.float "cached_weighted_average", default: 0.0
     t.bigint "comments_count", default: 0
     t.string "slug", null: false
+    t.float "trending_score"
     t.index ["cached_votes_down"], name: "index_posts_on_cached_votes_down"
     t.index ["cached_votes_score"], name: "index_posts_on_cached_votes_score"
     t.index ["cached_votes_total"], name: "index_posts_on_cached_votes_total"

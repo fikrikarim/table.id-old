@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @posts = Post.order(cached_votes_score: "desc", created_at: "desc")
+    @posts = Post.order(trending_score: "desc")
   end
 
   def upvote
