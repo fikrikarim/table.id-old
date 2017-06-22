@@ -14,15 +14,15 @@ class StaticPagesController < ApplicationController
     object.upvote_from current_user
   end
 
-  def downvote
-    auth_ajax
-    if params[:type] == 'Post'
-      object = Post.friendly.find(params[:id])
-    else
-      object = Comment.find(params[:id])
-    end
-    object.downvote_from current_user
-  end
+  # def downvote
+  #   auth_ajax
+  #   if params[:type] == 'Post'
+  #     object = Post.friendly.find(params[:id])
+  #   else
+  #     object = Comment.find(params[:id])
+  #   end
+  #   object.downvote_from current_user
+  # end
 
   def osn
 
