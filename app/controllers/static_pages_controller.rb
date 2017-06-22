@@ -24,6 +24,10 @@ class StaticPagesController < ApplicationController
     object.downvote_from current_user
   end
 
+  def osn
+
+  end
+
   private
 
   # Because normal authenticate_user! cannot redirect ajax
