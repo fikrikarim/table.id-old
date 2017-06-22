@@ -66,6 +66,18 @@ feature 'Post' do
 
   end
 
+  pending "User post more than 800 words"
+    # user = create(:user)
+    # login(user)
+    # click_link('Submit')
+    # expect(page).to have_current_path(new_post_path)
+    # fill_in "post_title", with: "Test title"
+    # fill_in "post_text", with: text
+    # click_button("Submit")
+    # expect(page).to have_current_path(new_post_path)
+    # expect(page).to have_content('Jumlah kalimat tidak boleh lebih dari 800')
+
+
   scenario "Unlogged user cannot reply to posts" do
     post = create(:post)
     comment = create(:comment, post_id: post.id)
