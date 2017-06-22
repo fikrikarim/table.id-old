@@ -88,6 +88,7 @@ feature 'Post' do
 
   end
 
+  pending "Test the ranking algorithm"
 
   pending "Test for showing nested comments"
   pending "View single thread for comments"
