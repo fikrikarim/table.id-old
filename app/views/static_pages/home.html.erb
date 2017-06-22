@@ -1,5 +1,24 @@
+<div class="osn-banner">
+  <%= link_to osn_path do %>
+    <i><p class="mdl-typography--display-1 mdl-typography--text-center">
+      OSN Short Story Competition
+    </p></i>
+  <% end %>
+</div>
+
 <% if Post.first %>
   <% @posts.each.with_index(1) do |post, index| %>
     <%= render "shared/post", post: post, index: index%>
   <% end %>
+
+<% else %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p class="mdl-typography--subhead-color-contrast mdl-typography--text-center">
+    There are no stories yet. Be first to submit!
+  </p>
 <% end %>

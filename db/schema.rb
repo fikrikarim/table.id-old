@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170620085230) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
-    t.integer "comments_count"
+    t.bigint "comments_count", default: 0
     t.string "slug", null: false
     t.index ["cached_votes_down"], name: "index_posts_on_cached_votes_down"
     t.index ["cached_votes_score"], name: "index_posts_on_cached_votes_score"
