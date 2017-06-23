@@ -3,10 +3,13 @@ class StaticPagesController < ApplicationController
   def home
     if params[:sort_by] == 'Top'
       @posts = Post.order(cached_votes_score: "desc")
+      @selected = 'Top'
     elsif params[:sort_by] == 'Newest'
       @posts = Post.order(created_at: "desc")
+      @selected = 'Newest'
     else
       @posts = Post.order(trending_score: "desc")
+      @selected = 'Trending'
     end
   end
 
