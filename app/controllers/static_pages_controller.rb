@@ -1,8 +1,13 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @posts = Post.order(trending_score: "desc")
-    @sort = 'trending'
+    if params[:sort_by] == 'Top'
+      @posts = Post.order(cached_votes_score: "desc")
+    elsif params[:sort_by] == 'Newest'
+      @posts = Post.order(created_at: "desc")
+    else
+      @posts = Post.order(trending_score: "desc")
+    end
   end
 
   def upvote
