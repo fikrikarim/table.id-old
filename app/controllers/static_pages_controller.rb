@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @posts = Post.order(trending_score: "desc")
+    @sort = 'trending'
   end
 
   def upvote

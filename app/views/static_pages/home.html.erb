@@ -6,6 +6,13 @@
   <% end %>
 </div>
 
+<div>
+  <%= form_tag("/asd", method: "get") do %>
+    <%= label_tag("Sort story by:") %>
+      <%= select_tag :sort_by, options_for_select([['Trending'], ['Newest'], ['Top']]), :onchange => "this.form.submit()"%>
+  <% end %>
+</div>
+
 <% if Post.first %>
   <% @posts.each.with_index(1) do |post, index| %>
     <%= render "shared/post", post: post, index: index%>
