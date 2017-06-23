@@ -36,7 +36,6 @@ class Post < ApplicationRecord
         sign = 0
     end
     # seconds = self.created_at.to_i - 1134028003
-    byebug
     return (order * sign.to_f) + ( epoch_seconds(self.created_at) / 45000 )
     # return ((order + sign * seconds / 45000)*7).ceil / 7.0
   end
