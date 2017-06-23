@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   before_validation :update_weighted_score
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   acts_as_votable
 

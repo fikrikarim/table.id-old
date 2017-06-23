@@ -40,8 +40,19 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @post = Post.friendly.find(params[:id])
+
+    if current_user.admin == true
+      @post.destroy
+      flash[:notice] = "The post has been deleted"
+    end
+
+    redirect_to root_path
+  end
+
   def report
-    flash[:notice] = "Your post has been reported. Thanks for making table.id more awesome!"
+    flash[:notice] = "We are reviewing your report. Thanks for making table.id more awesome!"
     redirect_to root_path
   end
 

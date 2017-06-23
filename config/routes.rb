@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'osn' => 'static_pages#osn'
 
-  resources :posts, only: [:show, :new, :index, :create, :edit, :update]
+  resources :posts
   resources :comments, only: [:new, :index, :create]
 
   put 'report/:id' => 'posts#report', as: :report
