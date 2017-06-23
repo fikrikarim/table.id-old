@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:show, :new, :index, :create, :edit, :update]
   resources :comments, only: [:new, :index, :create]
 
+  put 'report/:id' => 'posts#report', as: :report
   put 'upvote_post/:id/:type' => 'static_pages#upvote', as: :upvote_post
   put 'downvote_post/:id/:type' => 'static_pages#downvote', as: :downvote_post
 end

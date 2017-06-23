@@ -26,6 +26,9 @@
       <% if current_user && current_user == post.user %>
       |
         <%= link_to 'Edit story', edit_post_path(post) %>
+      <% else %>
+      |
+        <%= link_to 'Report', report_path(post), class: "grey-color", method: 'put' %>
       <% end %>
     </div>
   </div>

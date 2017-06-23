@@ -40,6 +40,11 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def report
+    flash[:notice] = "Your post has been reported. Thanks for making table.id more awesome!"
+    redirect_to root_path
+  end
+
   private
 
   def posts_params
