@@ -19,6 +19,12 @@ class Post < ApplicationRecord
    self.trending_score = real_weighted_score
   end
 
+  $our_epoch = Time.local(2016, 11, 21).to_time
+
+  def epoch_seconds(t)
+    (t.to_i - $our_epoch.to_i).to_f
+  end
+
   def real_weighted_score
     raw_score = self.get_upvotes.size
     order = Math.log([raw_score.abs, 1].max, 10)
@@ -29,7 +35,9 @@ class Post < ApplicationRecord
     else
         sign = 0
     end
-    seconds = self.created_at.to_i - 1134028003
-    return ((order + sign * seconds / 45000)*7).ceil / 7.0
+    # seconds = self.created_at.to_i - 1134028003
+    byebug
+    return (order * sign.to_f) + ( epoch_seconds(self.created_at) / 45000 )
+    # return ((order + sign * seconds / 45000)*7).ceil / 7.0
   end
 end
