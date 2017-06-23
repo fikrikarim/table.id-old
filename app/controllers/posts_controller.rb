@@ -19,6 +19,24 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @post = Post.friendly.find(params[:id])
+    if @post.user != current_user
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @post = Post.friendly.find(params[:id])
+    if @post.user != current_user
+      redirect_to root_path
+    end
+    if @post.update_attributes(posts_params)
+      flash[:notice] = "Your post has been edited"
+    end
+    redirect_to root_path
+  end
+
   private
 
   def posts_params

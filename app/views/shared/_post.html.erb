@@ -20,6 +20,10 @@
       </span>
         <br>
       <span><%= post.comments.size %> comments</span>
+      <% if current_user && current_user == post.user %>
+      |
+        <%= link_to 'Edit story', edit_post_path(post) %>
+      <% end %>
     </div>
   </div>
 </div>
