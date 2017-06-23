@@ -12,6 +12,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(posts_params)
     @post.user = current_user
+    if @post.user.admin == true
+      @post.sticky = true
+    end
     @post.save
     if @post.save
       flash[:notice] = "Your post has been submitted"
