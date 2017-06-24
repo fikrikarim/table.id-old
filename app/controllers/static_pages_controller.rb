@@ -7,6 +7,9 @@ class StaticPagesController < ApplicationController
     elsif params[:sort_by] == 'Newest'
       @posts = Post.order(:sticky, created_at: "desc")
       @selected = 'Newest'
+    elsif params[:sort_by] == 'Random'
+      @posts = Post.order(:sticky, "RANDOM()")
+      @selected = 'Random'
     else
       @posts = Post.order(:sticky, trending_score: "desc")
       @selected = 'Trending'
