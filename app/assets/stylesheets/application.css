@@ -19,6 +19,9 @@
   position: relative !important;
 }
 
+.pagination a {
+  font-size: 20px;
+}
 .no-padding {
   padding: 0 !important;
 }

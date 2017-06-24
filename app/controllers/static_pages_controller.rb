@@ -2,16 +2,16 @@ class StaticPagesController < ApplicationController
 
   def home
     if params[:sort_by] == 'Top'
-      @posts = Post.order(:sticky, cached_votes_score: "desc")
+      @posts = Post.order(:sticky, cached_votes_score: "desc").page params[:page]
       @selected = 'Top'
     elsif params[:sort_by] == 'Newest'
-      @posts = Post.order(:sticky, created_at: "desc")
+      @posts = Post.order(:sticky, created_at: "desc").page params[:page]
       @selected = 'Newest'
     elsif params[:sort_by] == 'Random'
-      @posts = Post.order(:sticky, "RANDOM()")
+      @posts = Post.order(:sticky, "RANDOM()").page params[:page]
       @selected = 'Random'
     else
-      @posts = Post.order(:sticky, trending_score: "desc")
+      @posts = Post.order(:sticky, trending_score: "desc").page params[:page]
       @selected = 'Trending'
     end
   end

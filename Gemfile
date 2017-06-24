@@ -52,6 +52,8 @@ gem 'redcarpet'
 # Install ancestry for comment nesting
 gem 'ancestry'
 
+gem 'kaminari'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

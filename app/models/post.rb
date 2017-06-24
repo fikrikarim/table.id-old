@@ -14,6 +14,8 @@ class Post < ApplicationRecord
   friendly_id :title, :use => [:slugged]
 
 
+  paginates_per 20
+
   def update_weighted_score
     # check if some relevant variables have changed first, for example
    self.trending_score = real_weighted_score
