@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     if @post.update_attributes(posts_params)
       flash[:notice] = "Your post has been edited"
     end
-    redirect_to root_path
+    redirect_to post_path(@post)
   end
 
   def destroy
