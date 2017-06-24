@@ -10,10 +10,12 @@
   <div class="post-title-and-attributes">
     <div class="">
       <span class="post-title mdl-typography--subhead">
-        <% if post.sticky %>
-          <b>Announcement: </b>
+        <%= link_to post do %>
+          <% if post.sticky %>
+            <b>Announcement: </b>
+          <% end %>
+          <%= post.title %>
         <% end %>
-        <%= link_to post.title, post %>
       </span>
     </div>
 
