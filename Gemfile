@@ -53,6 +53,7 @@ gem 'redcarpet'
 gem 'ancestry'
 
 gem 'kaminari'
+gem 'font-awesome-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
