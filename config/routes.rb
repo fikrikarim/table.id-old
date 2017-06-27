@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   put 'report/:id' => 'posts#report', as: :report
   put 'upvote_post/:id/:type' => 'static_pages#upvote', as: :upvote_post
   put 'downvote_post/:id/:type' => 'static_pages#downvote', as: :downvote_post
+
+  get ':username' => 'profile#show', as: :show_profile
+  get ':username/edit' => 'profile#edit', as: :edit_profile
 end
