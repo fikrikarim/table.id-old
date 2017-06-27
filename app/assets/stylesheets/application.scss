@@ -14,6 +14,17 @@
  *= require_self
  */
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fafafa;
+}
+
 /*To make the menu bar appear aligned right*/
 .mdl-navigation {
   position: relative !important;
@@ -54,12 +65,17 @@
   display: block;
 }
 
+.comment-container {
+  display: table;
+  padding: 15px 0;
+  width: 100%;
+}
+
 .comment-text-container {
   min-height: 60px;
-  display: block;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding-bottom: 11px;
+  display: table-cell;
+  overflow: hidden;
+  padding-left: 6px;
 }
 
 .nested-comments-container {
@@ -69,7 +85,7 @@
 .comment-text-container a{
   color: rgba(0,0,0,.87) !important;
   font-size: 10px;
-  font-weight: 400px;
+  font-weight: 400;
 }
 
 .upvote-clicked i {
@@ -114,49 +130,41 @@
 }
 
 .post-number {
-  padding-top: 19px;
-  float: left;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  position: absolute;
-  left: -20px;
+  display: table-cell;
+  vertical-align: middle;
+  width: 15px;
 }
 
-.vote-icon-up{
-  font-size: 36px !important;
+.vote-link-up,
+.vote-link-down {
   color: rgba(0,0,0,.87);
+  display: block;
 }
 
-.vote-icon-down{
+.vote-icon-up,
+.vote-icon-down {
+  line-height: 0.5;
   font-size: 36px !important;
-  color: rgba(0,0,0,.87);
-  position: relative;
-  top: -18px;
+  vertical-align: middle;
 }
 
 .vote-number {
   font-size: 14px !important;
-  position: relative;
-  top: -10px;
-  left: 4px;
+  display: block;
 }
 
 .post-container {
-  padding-bottom: 10px;
-  position: relative;
-  right: -15px;
+  display: table;
+  padding: 15px 0;
+  width: 100%;
 }
 
 .post-vote {
   width: 30px;
   height: 50px;
-  padding-right: 4px;
-  float: left;
   text-align: center;
-  position: relative;
-  top: -10px;
-  left: -9px;
-
+  display: table-cell;
+  vertical-align: top;
 }
 
 .post-title a {
@@ -167,9 +175,10 @@
 }
 
 .post-title-and-attributes {
-  display: block;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  display: table-cell;
+  vertical-align: middle;
+  overflow: hidden;
+  padding-left: 6px;
 }
 
 .markdown-render p {
