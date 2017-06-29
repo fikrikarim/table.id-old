@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  pending "Mana nih testnyaaa"
+
+  pending "Test controllerrrrrrr"
 end
