@@ -45,10 +45,25 @@ feature 'Profile' do
     expect(page).to have_current_path(edit_profile_path(user1.username))
     fill_in 'user_full_name', with: 'Fikri Karim'
     fill_in 'user_bio', with: 'Ini bio edit'
+    fill_in 'user_facebook', with: 'fikrikarim'
+    fill_in 'user_twitter', with: 'fikrikarim'
+    fill_in 'user_instagram', with: 'fikrikarim'
     click_button('Save changes')
     expect(page).to have_content('Fikri Karim')
     expect(page).to have_content('Ini bio edit')
     expect(page).to have_content('Your profile has been updated')
+    expect(page).to have_link href: 'https://www.facebook.com/fikrikarim'
+    expect(page).to have_link href: 'https://www.twitter.com/fikrikarim'
+    expect(page).to have_link href: 'https://www.instagram.com/fikrikarim'
+  end
 
+  scenario "if the user doesn't have the social media, the button doesn't appear" do |variable|
+    user = create(:user)
+    login(user)
+    visit user_profile_path(user.username)
+
+    expect(page).not_to have_link href: 'https://www.facebook.com/'
+    expect(page).not_to have_link href: 'https://www.twitter.com/'
+    expect(page).not_to have_link href: 'https://www.instagram.com/'
   end
 end

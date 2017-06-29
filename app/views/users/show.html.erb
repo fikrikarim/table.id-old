@@ -7,19 +7,19 @@
     <p class="profile--card-header-username">@<%= @user.username %></p>
     <ul class="profile--card-header-social-media">
       <li>
-        <a href="#" title="Facebook">
+        <%= link_to "https://www.facebook.com/#{@user.facebook}" do%>
           <i class="fa fa-facebook"></i>
-        </a>
+        <% end %>
       </li>
       <li>
-        <a href="#" title="Twitter">
+        <%= link_to "https://www.twitter.com/#{@user.twitter}" do%>
           <i class="fa fa-twitter"></i>
-        </a>
+        <% end %>
       </li>
       <li>
-        <a href="#" title="Instagram">
+        <%= link_to "https://www.instagram.com/#{@user.instagram}" do%>
           <i class="fa fa-instagram"></i>
-        </a>
+        <% end %>
       </li>
     </ul>
 
