@@ -33,4 +33,20 @@ feature 'Profile' do
     visit user_profile_path(user1.username)
     expect(page).to have_content('Edit profile')
   end
+
+  scenario "logged user can change their profile" do
+    user1 = create(:user)
+    user1.full_name = 'Fikri Ganteng'
+    user1.save!
+    login(user1)
+    visit user_profile_path(user1.username)
+    expect(page).to have_content('Fikri Ganteng')
+    click_link('Edit profile')
+    expect(page).to have_current_path(edit_profile_path(user1.username))
+    fill_in 'user_full_name', with: 'Fikri Karim'
+    click_button('Save changes')
+    expect(page).to have_content('Fikri Karim')
+    expect(page).to have_content('Your profile has been updated!')
+
+  end
 end
