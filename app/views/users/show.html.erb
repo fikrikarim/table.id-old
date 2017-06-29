@@ -1,8 +1,8 @@
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp profile--card profile--card-header">
     <%= link_to "Edit profile", edit_profile_path, class: "mdl-button mdl-js-button mdl-js-ripple-effect profile--card-header-button" %>
-    <h3 class="profile--card-header-title">Harry Potter</h3>
-    <p class="profile--card-header-username">@potter</p>
+    <h3 class="profile--card-header-title"><%=  %></h3>
+    <p class="profile--card-header-username"><%= @user.username %></p>
     <ul class="profile--card-header-social-media">
       <li>
         <a href="#" title="Facebook">

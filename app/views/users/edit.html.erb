@@ -28,8 +28,10 @@
         <%= f.label :bio, class: "mdl-textfield__label" %>
       </div>
 
-      <%= link_to "Cancel", show_profile_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" %>
       <%= f.submit "Save changes", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+      <br>
+      <br>
+      <%= link_to "Cancel", user_profile_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" %>
     <% end %>
   </div>
 </div>
