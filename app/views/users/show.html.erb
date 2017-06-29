@@ -6,21 +6,31 @@
     <h3 class="profile--card-header-title"><%= @user.full_name %></h3>
     <p class="profile--card-header-username">@<%= @user.username %></p>
     <ul class="profile--card-header-social-media">
-      <li>
-        <%= link_to "https://www.facebook.com/#{@user.facebook}" do%>
-          <i class="fa fa-facebook"></i>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "https://www.twitter.com/#{@user.twitter}" do%>
-          <i class="fa fa-twitter"></i>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "https://www.instagram.com/#{@user.instagram}" do%>
-          <i class="fa fa-instagram"></i>
-        <% end %>
-      </li>
+      <!-- .facebook? check if nil or not empty -->
+      <% if @user.facebook? %>
+        <li>
+          <%= link_to "https://www.facebook.com/#{@user.facebook}" do %>
+            <i class="fa fa-facebook"></i>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if @user.twitter? %>
+        <li>
+          <%= link_to "https://www.twitter.com/#{@user.twitter}" do %>
+            <i class="fa fa-twitter"></i>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if @user.instagram? %>
+        <li>
+          <%= link_to "https://www.instagram.com/#{@user.instagram}" do %>
+            <i class="fa fa-instagram"></i>
+          <% end %>
+        </li>
+      <% end %>
+
     </ul>
 
     <p class="profile--card-header-bio">

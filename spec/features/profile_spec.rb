@@ -61,7 +61,6 @@ feature 'Profile' do
     user = create(:user)
     login(user)
     visit user_profile_path(user.username)
-
     expect(page).not_to have_link href: 'https://www.facebook.com/'
     expect(page).not_to have_link href: 'https://www.twitter.com/'
     expect(page).not_to have_link href: 'https://www.instagram.com/'
