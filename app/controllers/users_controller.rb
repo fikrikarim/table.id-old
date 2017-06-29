@@ -21,14 +21,17 @@ class UsersController < ApplicationController
 
     if @user.update_attributes(profile_params)
       flash[:notice] = "Your profile has been updated"
+      redirect_to user_profile_path(@user.username)
+    else
+      flash[:notice] = "The username has been taken"
+      redirect_to edit_profile_path(current_user.username)
     end
 
-    redirect_to user_profile_path(@user.username)
   end
 
   private
 
   def profile_params
-    params.require(:user).permit(:full_name, :facebook, :twitter, :instagram, :bio)
+    params.require(:user).permit(:full_name, :username, :facebook, :twitter, :instagram, :bio)
   end
 end
