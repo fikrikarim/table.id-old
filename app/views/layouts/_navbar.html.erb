@@ -27,10 +27,8 @@
 
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
             for="demo-menu-lower-right">
-            <div class="mdl-cell--hide-desktop mdl-cell--hide-tablet">
-              <li disabled class="mdl-menu__item "><%= current_user.username %></li>
+              <%= link_to current_user.username, user_profile_path(current_user.username), class: "mdl-menu__item" %>
               <li class="mdl-menu__item--full-bleed-divider"></li>
-            </div>
             <li><%= link_to "Logout", destroy_user_session_path, class: "mdl-menu__item", method: :delete %></li>
         </ul>
       <% else %>

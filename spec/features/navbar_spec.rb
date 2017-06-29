@@ -38,12 +38,13 @@ feature 'Navbar', type: :feature do
 
   end
 
-  scenario "Check for logout button using js", js: true do
+  scenario "Check for logout button and profile button using js", js: true do
     user = create(:user)
     login(user)
 
     click_button(user.username)
     expect(page).to have_link "Logout", href: destroy_user_session_path
+    expect(page).to have_link user.username, href: user_profile_path(user.username)
     click_link "Logout"
 
     expect(page).to have_current_path(root_path)
