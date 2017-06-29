@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -12,6 +13,6 @@ Rails.application.routes.draw do
   put 'upvote_post/:id/:type' => 'static_pages#upvote', as: :upvote_post
   put 'downvote_post/:id/:type' => 'static_pages#downvote', as: :downvote_post
 
-  get ':username' => 'profile#show', as: :show_profile
-  get ':username/edit' => 'profile#edit', as: :edit_profile
+  get 'u/:username' => 'profile#show', as: :show_profile
+  get 'u/:username/edit' => 'profile#edit', as: :edit_profile
 end
