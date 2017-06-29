@@ -46,7 +46,7 @@ feature 'Profile' do
     fill_in 'user_full_name', with: 'Fikri Karim'
     click_button('Save changes')
     expect(page).to have_content('Fikri Karim')
-    expect(page).to have_content('Your profile has been updated!')
+    expect(page).to have_content('Your profile has been updated')
 
   end
 end
