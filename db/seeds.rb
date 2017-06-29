@@ -31,8 +31,10 @@ user1 = User.create! username: "fk",
                     password: "NARUTO",
                     password_confirmation: "NARUTO"
 
+# Baru user ini yang punya attribut lengkap"
 user2 = User.create! username: "jh",
                     email: "skyczor@gmail.com",
+                    full_name: 'Jamal Hasbi',
                     password: "jamal321",
                     password_confirmation: "jamal321"
 

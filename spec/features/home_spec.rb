@@ -10,7 +10,7 @@ feature 'home' do
       expect(page).to have_content("1.")
       expect(page).to have_content(post.cached_votes_score)
       expect(page).to have_link(post.title, href: post_path(post))
-      expect(page).to have_link(post.user.username, href: user_profile_path(post.user))
+      expect(page).to have_link(post.user.username, href: user_profile_path(post.user.username))
     end
 
     pending "create link to user submitter"
