@@ -43,8 +43,9 @@ feature 'Navbar', type: :feature do
     login(user)
 
     click_button(user.username)
-    expect(page).to have_link "Logout", href: destroy_user_session_path
     expect(page).to have_link user.username, href: user_profile_path(user.username)
+    expect(page).to have_link 'Edit profile', href: edit_profile_path(user.username)
+    expect(page).to have_link "Logout", href: destroy_user_session_path
     click_link "Logout"
 
     expect(page).to have_current_path(root_path)

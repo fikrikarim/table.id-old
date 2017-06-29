@@ -70,8 +70,9 @@ feature 'Profile' do
     click_button('Save changes')
     expect(page).to have_current_path(edit_profile_path(user2.username))
     expect(page).to have_content("The username has been taken")
-
   end
+
+  pending "will show errors other than for existing username update 'The username has been taken'"
 
   scenario "if the user doesn't have the social media, the button doesn't appear" do |variable|
     user = create(:user)
