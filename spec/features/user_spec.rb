@@ -81,6 +81,8 @@ feature 'User system' do
 
 
   end
+
+
   pending "Email confirmation test"
 
     # before :each do

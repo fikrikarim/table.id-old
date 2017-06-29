@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe PostsController, type: :controller do
-  pending "Test controller oeoeoe. Authentication tiap action"
+RSpec.describe UsersController, type: :controller do
+  pending "Mana nih testnyaaa"
 end
