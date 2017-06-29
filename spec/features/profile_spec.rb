@@ -44,8 +44,10 @@ feature 'Profile' do
     click_link('Edit profile')
     expect(page).to have_current_path(edit_profile_path(user1.username))
     fill_in 'user_full_name', with: 'Fikri Karim'
+    fill_in 'user_bio', with: 'Ini bio edit'
     click_button('Save changes')
     expect(page).to have_content('Fikri Karim')
+    expect(page).to have_content('Ini bio edit')
     expect(page).to have_content('Your profile has been updated')
 
   end
