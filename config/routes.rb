@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   put 'upvote_post/:id/:type' => 'static_pages#upvote', as: :upvote_post
   put 'downvote_post/:id/:type' => 'static_pages#downvote', as: :downvote_post
 
+  resources :users, path: 'u', except: [:show, :edit]
   get 'u/:username' => 'users#show', as: :user_profile
   get 'u/:username/edit' => 'users#edit', as: :edit_profile
 end
