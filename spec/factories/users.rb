@@ -1,6 +1,6 @@
 FactoryGirl.define do
   sequence :username do |n|
-    "user#{n}@table.com"
+    "user#{n}"
   end
   sequence :email do |n|
     "user#{n}@table.com"

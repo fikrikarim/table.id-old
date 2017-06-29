@@ -21,7 +21,8 @@
 
     <div class="post-attributes mdl-typography--caption-color-contrast">
       <span>
-        <%= time_ago_in_words(post.created_at) %> ago by <span><%= post.user.username %></span>
+        <%= time_ago_in_words(post.created_at) %> ago by
+        <%= link_to post.user.username, user_profile_path(post.user.username) %>
       </span>
         <br>
       <span><%= post.comments.size %> comments</span>
