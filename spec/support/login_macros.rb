@@ -25,6 +25,7 @@ module LoginMacros
   def sign_up(user)
     visit new_user_registration_path
 
+    fill_in 'user_full_name', with: user.full_name
     fill_in 'user_username', with: user.username
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password

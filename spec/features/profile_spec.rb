@@ -16,7 +16,8 @@ feature 'Profile' do
     user2 = create(:user)
     login(user2)
     visit user_profile_path(user1.username)
-    expect(page).not_to have_content('Edit profile')
+    # There's additional Edit profile in navbar
+    expect(page).to have_link('Edit profile', count: 1)
   end
 
   scenario "if the visiting the user isnt the logged one, cannot go to edit_profile_path and will be redirected to root path" do
@@ -31,7 +32,8 @@ feature 'Profile' do
     user1 = create(:user)
     login(user1)
     visit user_profile_path(user1.username)
-    expect(page).to have_content('Edit profile')
+    # There's additional Edit profile in navbar
+    expect(page).to have_content('Edit profile', count: 2)
   end
 
   scenario "logged user can change their profile" do
@@ -41,7 +43,7 @@ feature 'Profile' do
     login(user1)
     visit user_profile_path(user1.username)
     expect(page).to have_content('Fikri Ganteng')
-    click_link('Edit profile')
+    visit edit_profile_path(user1.username)
     expect(page).to have_current_path(edit_profile_path(user1.username))
     fill_in 'user_full_name', with: 'Fikri Karim'
     fill_in 'user_username', with: 'fikrikarim'
