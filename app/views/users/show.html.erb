@@ -43,11 +43,11 @@
       <div class="mdl-tabs__tab-bar profile--tab-bar">
         <a href="#posts" class="mdl-tabs__tab is-active">
           <span class="profile--tab-bar-label">Posts</span>
-          5
+          <%= @user.posts.count %>
         </a>
         <a href="#comments" class="mdl-tabs__tab">
           <span class="profile--tab-bar-label">Comments</span>
-          3
+          <%= @user.comments.count %>
         </a>
       </div>
 
@@ -58,8 +58,10 @@
       </div>
 
       <div class="mdl-tabs__panel profile--tabs-panel" id="comments">
-
-          <%= nested_comments @user.comments.arrange(:order => :created_at) %>
+        <%  @user.comments.each do |comment| %>
+          on: <%= link_to comment.post.title, post_path(comment.post)%>
+          <%= nested_comments comment.subtree.arrange(:order => :created_at) %>
+        <% end %>
       </div>
     </div>
   </div>
