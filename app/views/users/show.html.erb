@@ -52,7 +52,7 @@
       </div>
 
       <div class="mdl-tabs__panel profile--tabs-panel is-active" id="posts">
-        <% @user.posts.each.with_index(1) do |post, index| %>
+        <% @user.posts.order(created_at: 'desc').each.with_index(1) do |post, index| %>
           <%= render "shared/post", post: post, index: index%>
         <% end %>
       </div>
