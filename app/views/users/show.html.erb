@@ -59,7 +59,6 @@
 
       <div class="mdl-tabs__panel profile--tabs-panel" id="comments">
         <%  @user.comments.each do |comment| %>
-          on: <%= link_to comment.post.title, post_path(comment.post)%>
           <%= nested_comments comment.subtree.arrange(:order => :created_at) %>
         <% end %>
       </div>
