@@ -27,7 +27,7 @@
 
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
             for="demo-menu-lower-right">
-              <%= link_to current_user.username, user_profile_path(current_user.username), class: "mdl-menu__item" %>
+              <%= link_to 'Profile', user_profile_path(current_user.username), class: "mdl-menu__item" %>
               <%= link_to 'Edit profile', edit_profile_path(current_user.username), class: "mdl-menu__item" %>
               <li class="mdl-menu__item--full-bleed-divider"></li>
             <li><%= link_to "Logout", destroy_user_session_path, class: "mdl-menu__item", method: :delete %></li>
