@@ -10,7 +10,6 @@
   <div class="post-title-and-attributes">
     <div class="">
       <span class="post-title mdl-typography--subhead">
-
         <%= link_to post.link || post do %>
           <% if post.sticky %>
             <b>Announcement: </b>
@@ -18,6 +17,11 @@
           <%= post.title %>
         <% end %>
       </span>
+      <% if post.link %>
+        <span class="post-link">
+          (<%= URI.parse(post.link).host %>)
+        </span>
+      <% end %>
     </div>
 
     <div class="post-attributes mdl-typography--caption-color-contrast">
