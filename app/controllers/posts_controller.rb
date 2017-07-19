@@ -11,6 +11,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(posts_params)
+
+    if @post.link.present? && !@post.link.include?('http:')
+      @post.link = 'http://' + @post.link
+    end
+
     @post.user = current_user
     if @post.user.admin == true
       @post.sticky = true
