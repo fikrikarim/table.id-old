@@ -7,7 +7,9 @@ class UsersController < ApplicationController
     @user.full_name ||= 'Nama Lengkap'
     @user.bio ||= 'Bio'
 
-    @karma = 9
+    @karma = @user.posts.map{|c| c.cached_votes_total}.sum +
+             @user.comments.map{|c| c.cached_votes_total}.sum
+
   end
 
   def edit
