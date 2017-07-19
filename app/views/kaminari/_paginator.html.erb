@@ -9,9 +9,11 @@
 
 <%= paginator.render do -%>
   <nav class="pagination card mdl-shadow--2dp">
-    <%= prev_page_tag unless current_page.first? %>
-    <% unless current_page.out_of_range? %>
+    <% unless current_page.first? %>
+      <%= prev_page_tag  %>
       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <% end %>
+    <% unless current_page.out_of_range? %>
       <%= next_page_tag unless current_page.last? %>
     <% end %>
   </nav>
