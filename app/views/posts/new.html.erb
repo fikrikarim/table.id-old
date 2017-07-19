@@ -6,15 +6,15 @@
 <div class="mdl-shadow--2dp profile--card profile--card--bleed">
   <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect profile--tabs">
     <div class="mdl-tabs__tab-bar profile--tab-bar no-text-transform">
-      <a href="#posts" class="mdl-tabs__tab is-active">
+      <a href="#posts" class="mdl-tabs__tab">
         Link
       </a>
-      <a href="#comments" class="mdl-tabs__tab">
+      <a href="#comments" class="mdl-tabs__tab is-active">
         Text
       </a>
     </div>
 
-    <div class="mdl-tabs__panel profile--tabs-panel is-active" id="posts">
+    <div class="mdl-tabs__panel profile--tabs-panel" id="posts">
       <div class="card">
         <%= form_for @post do |f| %>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-width">
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="mdl-tabs__panel profile--tabs-panel" id="comments">
+    <div class="mdl-tabs__panel profile--tabs-panel is-active" id="comments">
       <div class="card">
         <%= form_for @post do |f| %>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-width">
