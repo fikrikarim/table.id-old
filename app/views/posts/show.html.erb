@@ -8,9 +8,13 @@
   </div>
 </div>
 
-<hr>
+<br>
 
 <%= render 'comments/newcomment', post_id: @post.id %>
 
-<!-- http://railscasts.com/episodes/262-trees-with-ancestry?view=asciicast -->
-<%= nested_comments @post.comments.arrange(:order => :created_at) %>
+<br>
+
+<div class="mdl-shadow--2dp card">
+  <!-- http://railscasts.com/episodes/262-trees-with-ancestry?view=asciicast -->
+  <%= nested_comments @post.comments.arrange(:order => :created_at) %>
+</div>
