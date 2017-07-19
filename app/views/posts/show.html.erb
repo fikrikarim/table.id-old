@@ -1,7 +1,11 @@
-<%= render "shared/post", post: @post, index: nil%>
-
-<div class="markdown-render">
-  <%= markdown(@post.text) %>
+<div class="mdl-shadow--2dp card">
+  <%= render "shared/post", post: @post, index: nil%>
+</div>
+<br>
+<div class="mdl-shadow--2dp card">
+  <div class="markdown-render">
+    <%= markdown(@post.text) %>
+  </div>
 </div>
 
 <hr>

@@ -16,9 +16,12 @@
 </div>
 
 <% if Post.first %>
-  <% @posts.each.with_index(1) do |post, index| %>
-    <%= render "shared/post", post: post, index: index%>
-  <% end %>
+
+  <div class="card-home mdl-shadow--2dp">
+    <% @posts.each.with_index(1) do |post, index| %>
+        <%= render "shared/post", post: post, index: index%>
+    <% end %>
+  </div>
 
 <% else %>
   <br>
