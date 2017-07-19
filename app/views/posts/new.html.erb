@@ -1,26 +1,73 @@
-<h2 class="mdl-typography--headline">Submit new story</h2>
+<div class="mdl-shadow--2dp card">
+  <span class="mdl-typography--headline">Submit new post</span>
+</div>
+<br>
 
-<%= form_for @post do |f| %>
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-width">
-    <%= f.label :Title, class: "mdl-textfield__label" %>
-    <%= f.text_field :title, autofocuse: true, class: "mdl-textfield__input" %>
+<div class="mdl-shadow--2dp profile--card profile--card--bleed">
+  <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect profile--tabs">
+    <div class="mdl-tabs__tab-bar profile--tab-bar no-text-transform">
+      <a href="#posts" class="mdl-tabs__tab is-active">
+        Link
+      </a>
+      <a href="#comments" class="mdl-tabs__tab">
+        Text
+      </a>
+    </div>
+
+    <div class="mdl-tabs__panel profile--tabs-panel is-active" id="posts">
+      <div class="card">
+        <%= form_for @post do |f| %>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-width">
+            <%= f.label :Title, class: "mdl-textfield__label" %>
+            <%= f.text_field :title, autofocuse: true, class: "mdl-textfield__input" %>
+          </div>
+
+          <br>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-width">
+            <%= f.label 'Link (url)', class: "mdl-textfield__label" %>
+            <%= f.text_field :link, class: "mdl-textfield__input" %>
+          </div>
+
+          <br>
+          <br>
+          <!-- <div class="">
+            <p class="mdl-typography--body-2">Text styling:</p>
+            <p class="mdl-typography--body-2">**Bold**</p>
+          </div> -->
+
+          <div class="actions">
+            <%= f.submit "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mdl-tabs__panel profile--tabs-panel" id="comments">
+      <div class="card">
+        <%= form_for @post do |f| %>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-width">
+            <%= f.label :Title, class: "mdl-textfield__label" %>
+            <%= f.text_field :title, autofocuse: true, class: "mdl-textfield__input" %>
+          </div>
+
+          <br>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-width">
+            <%= f.label :Text, class: "mdl-textfield__label" %>
+            <%= f.text_area :text, :rows => 15, class: "mdl-textfield__input" %>
+          </div>
+
+          <!-- <div class="">
+            <p class="mdl-typography--body-2">Text styling:</p>
+            <p class="mdl-typography--body-2">**Bold**</p>
+          </div> -->
+
+          <div class="actions">
+            <%= f.submit "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <br>
-
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-width">
-    <%= f.label :Story, class: "mdl-textfield__label" %>
-    <%= f.text_area :text, :rows => 15, class: "mdl-textfield__input" %>
-  </div>
-
-  <!-- <div class="">
-    <p class="mdl-typography--body-2">Text styling:</p>
-    <p class="mdl-typography--body-2">**Bold**</p>
-  </div> -->
-
-  <div class="actions">
-    <%= f.submit "Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent" %>
-  </div>
-  <br>
-  <br>
-<% end %>
+</div>

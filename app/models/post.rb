@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
   validates :title, presence: true
-  validates :text, presence: true
   validates :slug, presence: true
 
   before_validation :update_weighted_score

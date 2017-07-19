@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new(title: "[OSN Story] ")
+    @post = Post.new
   end
 
   def create
@@ -59,6 +59,6 @@ class PostsController < ApplicationController
   private
 
   def posts_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text, :url)
   end
 end
