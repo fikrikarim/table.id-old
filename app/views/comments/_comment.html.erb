@@ -12,8 +12,9 @@
         <%- end %>
       </span>
     </div>
-      <%= comment.text %>
-      <br>
+      <div class="markdown-comment">
+        <%= markdown(comment.text) %>
+      </div>
       <%= link_to "Reply", new_comment_path(post_id: comment.post.id, parent_id: comment) %>
   </div>
 </div>
