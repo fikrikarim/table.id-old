@@ -3,8 +3,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by username: params[:username]
 
+    # Default values
     @user.full_name ||= 'Nama Lengkap'
     @user.bio ||= 'Bio'
+
+    @karma = 9
   end
 
   def edit

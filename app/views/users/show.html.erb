@@ -4,7 +4,8 @@
       <%= link_to "Edit profile", edit_profile_path, class: "mdl-button mdl-js-button mdl-js-ripple-effect profile--card-header-button" %>
     <% end %>
     <h3 class="profile--card-header-title"><%= @user.full_name %></h3>
-    <p class="profile--card-header-username">@<%= @user.username %></p>
+    <span class="profile--card-header-username">@<%= @user.username %></span>
+    <p class="profile--card-header-username">Karma: <%= @karma %></p>
     <ul class="profile--card-header-social-media">
       <!-- .facebook? check if nil or not empty -->
       <% if @user.facebook? %>
