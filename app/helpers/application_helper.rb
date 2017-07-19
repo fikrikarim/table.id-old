@@ -31,4 +31,8 @@ module ApplicationHelper
       render(comment) + content_tag(:div, nested_comments(sub_comments), :class => "nested-comments-container")
     end.join.html_safe
   end
+
+  def title(page_title)
+    content_for(:title) { page_title }
+  end
 end
