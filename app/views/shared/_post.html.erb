@@ -10,7 +10,7 @@
   <div class="post-title-and-attributes">
     <div class="">
       <span class="post-title mdl-typography--subhead">
-        <%= link_to post do %>
+        <%= link_to "http://#{post.link}" || post do %>
           <% if post.sticky %>
             <b>Announcement: </b>
           <% end %>

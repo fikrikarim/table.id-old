@@ -2,19 +2,23 @@
   <%= render "shared/post", post: @post, index: nil%>
 </div>
 <br>
-<div class="mdl-shadow--2dp card">
-  <div class="markdown-render">
-    <%= markdown(@post.text) %>
-  </div>
-</div>
 
+<% if @post.text %>
+  <div class="mdl-shadow--2dp card">
+    <div class="markdown-render">
+      <%= markdown(@post.text) %>
+    </div>
+  </div>
 <br>
+<% end %>
 
 <%= render 'comments/newcomment', post_id: @post.id %>
 
 <br>
 
-<div class="mdl-shadow--2dp card">
-  <!-- http://railscasts.com/episodes/262-trees-with-ancestry?view=asciicast -->
-  <%= nested_comments @post.comments.arrange(:order => :created_at) %>
-</div>
+<% if @post.comments.any? %>
+  <div class="mdl-shadow--2dp card">
+    <!-- http://railscasts.com/episodes/262-trees-with-ancestry?view=asciicast -->
+    <%= nested_comments @post.comments.arrange(:order => :created_at) %>
+  </div>
+<% end %>
