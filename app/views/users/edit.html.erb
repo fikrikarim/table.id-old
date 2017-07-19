@@ -19,6 +19,11 @@
       </div>
 
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label profile--textfield">
+        <%= f.text_field :email, class: "mdl-textfield__input", disabled: true %>
+        <%= f.label :email, class: "mdl-textfield__label" %>
+      </div>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label profile--textfield">
         <%= f.text_field :facebook, class: "mdl-textfield__input" %>
         <%= f.label :facebook, 'Username Facebook', class: "mdl-textfield__label" %>
       </div>
