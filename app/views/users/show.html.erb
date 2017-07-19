@@ -59,7 +59,10 @@
 
       <div class="mdl-tabs__panel profile--tabs-panel" id="comments">
         <%  @user.comments.each do |comment| %>
-          <%= nested_comments comment.subtree.arrange(:order => :created_at) %>
+          <%# Check if the comment has an ancestor created from that user %>
+          <% if (comment.ancestor_ids & @user.comment_ids).empty? %>
+            <%= nested_comments comment.subtree.arrange(:order => :created_at) %>
+          <% end %>
         <% end %>
       </div>
     </div>
