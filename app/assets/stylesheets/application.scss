@@ -33,6 +33,9 @@ body {
 .pagination a {
   font-size: 20px;
 }
+.pagination {
+  text-align: center;
+}
 .no-padding {
   padding: 0 !important;
 }
@@ -199,4 +202,8 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   border-bottom: 1px solid #e6ecf0;
+}
+
+.card .next {
+  text-align: center;
 }

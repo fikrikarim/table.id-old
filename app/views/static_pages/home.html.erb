@@ -6,23 +6,21 @@
   <% end %>
 </div>
 
-<div>
+<div class="card mdl-shadow--2dp">
   <%= form_tag("/", method: "get") do %>
     <%= label_tag("Sort story by:") %>
     <%= select_tag :sort_by, options_for_select([['Trending'], ['Newest'], ['Top'], ['Random']], @selected), :onchange => "this.form.submit()"%>
   <% end %>
-
-  <br>
 </div>
 
-<% if Post.first %>
+<br>
 
+<% if Post.first %>
   <div class="card-home mdl-shadow--2dp">
     <% @posts.each.with_index(1) do |post, index| %>
         <%= render "shared/post", post: post, index: index%>
     <% end %>
   </div>
-
 <% else %>
   <br>
   <br>
@@ -35,4 +33,5 @@
   </p>
 <% end %>
 
+<br>
 <%= paginate @posts %>
