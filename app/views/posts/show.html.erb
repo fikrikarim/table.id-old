@@ -12,6 +12,12 @@
     </div>
   </div>
 <br>
+
+<div class="mdl-typography--text-center">
+  <%= link_to "Kembali ke halaman depan", root_path, class: "mdl-button mdl-js-button mdl-button--raised", method: :get %>
+</div>
+
+<br>
 <% end %>
 
 <%= render 'comments/newcomment', post_id: @post.id %>
