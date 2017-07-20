@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   get 'osn' => 'static_pages#osn'
+  get 'update' => redirect('/osn')
 
   resources :posts
   resources :comments, only: [:new, :index, :create]
