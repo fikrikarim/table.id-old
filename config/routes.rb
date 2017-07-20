@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   get 'osn' => 'static_pages#osn'
-  get 'update' => redirect('/osn')
+  get 'update' => redirect('https://table.id/posts/h-3-deadline-dan-update')
 
   resources :posts
   resources :comments, only: [:new, :index, :create]
