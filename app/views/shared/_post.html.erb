@@ -17,11 +17,14 @@
           <%= post.title %>
         <% end %>
       </span>
-      <% if post.link %>
-        <span class="post-link">
+      <span class="post-link">
+        <% if post.link %>
           (<%= URI.parse(post.link).host %>)
-        </span>
-      <% end %>
+        <% else %>
+          (<%= 'table.id' %>)
+        <% end %>
+      </span>
+
     </div>
 
     <div class="post-attributes mdl-typography--caption-color-contrast">
