@@ -10,10 +10,13 @@
     <div class="markdown-render">
       <%= markdown(@post.text) %>
     </div>
-    <%= render 'shared/votebuttonwithtext', source: @post %>
   </div>
 <br>
 
+<div class="mdl-typography--text-center">
+  <%= render 'shared/votebuttonwithtext', source: @post %>
+</div>
+<br>
 <div class="mdl-typography--text-center">
   <%= link_to "Kembali ke halaman depan", root_path, class: "mdl-button mdl-js-button mdl-button--raised", method: :get %>
 </div>
