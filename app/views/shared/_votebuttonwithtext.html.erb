@@ -1,0 +1,17 @@
+<div class="mdl-typography--text-center">
+<% if current_user && current_user.voted_up_on?(source) %>
+
+  <span class="upvote-clicked">
+    <i class="material-icons vote-icon-up">arrow_drop_up</i>
+    <span>Telah upvote</span>
+  </span>
+
+<% else %>
+
+  <%= link_to upvote_post_path(source, source.class.name), class: 'vote-link-up', id: "upvote-#{source.id}", method: :put, remote: true do %>
+    <i class="material-icons vote-icon-up">arrow_drop_up</i>
+    <span class="">Upvote cerita ini</span>
+  <% end %>
+
+<% end %>
+</div>

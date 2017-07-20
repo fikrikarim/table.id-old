@@ -10,6 +10,7 @@
     <div class="markdown-render">
       <%= markdown(@post.text) %>
     </div>
+    <%= render 'shared/votebuttonwithtext', source: @post %>
   </div>
 <br>
 
