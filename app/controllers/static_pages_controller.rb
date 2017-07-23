@@ -18,12 +18,14 @@ class StaticPagesController < ApplicationController
 
   def upvote
     auth_ajax
-    if params[:type] == 'Post'
-      object = Post.friendly.find(params[:id])
-    else
-      object = Comment.find(params[:id])
-    end
-    object.upvote_from current_user
+    # Disable vote system for a while
+    redirect_back(fallback_location: root_path, notice: 'Mohon maaf. Untuk sementara, sistem vote dimatikan untuk perhitungan hasil OSN Story Competition.')
+  #   if params[:type] == 'Post'
+  #     object = Post.friendly.find(params[:id])
+  #   else
+  #     object = Comment.find(params[:id])
+  #   end
+  #   object.upvote_from current_user
   end
 
   # def downvote
