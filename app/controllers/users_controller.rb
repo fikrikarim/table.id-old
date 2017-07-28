@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     # Default values
     @user.full_name ||= 'Nama Lengkap'
     @user.bio ||= 'Bio'
+    # Remove the @ if any
+    if @user.instagram
+      @user.instagram = @user.instagram.sub('@', '')
+    end
 
     @karma = @user.posts.map{|c| c.cached_votes_total}.sum +
              @user.comments.map{|c| c.cached_votes_total}.sum
