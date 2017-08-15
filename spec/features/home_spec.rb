@@ -50,7 +50,7 @@ feature 'home' do
 
   context "Vote system javascript" do
 
-    scenario "The upvote button when clicked change color and will persist after reload page", js: true do
+    scenario "The upvote button when clicked change color and will persist after reload page for post", js: true do
       post = create(:post)
       user = create(:user)
       login(user)
@@ -70,6 +70,8 @@ feature 'home' do
       expect(page).to have_css("a.upvote-clicked")
       expect(page).not_to have_link("", href: upvote_post_path(post, post.class.name))
     end
+
+    pending "Upvote for comment"
 
     pending "The downvote button when clicked change color and will persist after reload page", js: true do
       post = create(:post)

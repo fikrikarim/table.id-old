@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
-  pending "Test controller disini cuyyyyy"
-  pending "Test unlogged user for each action"
+
+  it "can be upvoted" do
+    create(:comment)
+    user = create(:user)
+    sign_in user
+    put :upvote_post
+  end
+
 end
