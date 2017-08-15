@@ -12,12 +12,6 @@ RSpec.describe Post, type: :model do
     expect(post.errors[:title]).to include("can't be blank")
   end
 
-  it "is invalid without text" do
-    post = build(:post, text: nil)
-    post.valid?
-    expect(post.errors[:text]).to include("can't be blank")
-  end
-
   it "is invalid without user" do
     post = build(:post, user: nil)
     post.valid?
