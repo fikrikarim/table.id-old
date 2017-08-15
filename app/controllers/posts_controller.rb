@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     end
 
     # Check for valid uri
-    if !uri?(@post.link)
+    if @post.link.present? && !uri?(@post.link)
       flash[:notice] = "Link yang anda masukkan tidak valid."
       render 'new'
     else
