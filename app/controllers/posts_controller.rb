@@ -16,15 +16,21 @@ class PostsController < ApplicationController
       @post.link = 'http://' + @post.link
     end
 
-    @post.user = current_user
-    if @post.user.admin == true
-      @post.sticky = true
+    # Check for valid uri
+    if !uri?(@post.link)
+      flash[:notice] = "Link yang anda masukkan tidak valid."
+      render 'new'
+    else
+      @post.user = current_user
+      if @post.user.admin == true
+        @post.sticky = true
+      end
+      @post.save
+      if @post.save
+        flash[:notice] = "Your post has been submitted"
+      end
+      redirect_to root_path
     end
-    @post.save
-    if @post.save
-      flash[:notice] = "Your post has been submitted"
-    end
-    redirect_to root_path
   end
 
   def edit

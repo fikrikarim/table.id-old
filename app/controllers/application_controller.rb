@@ -13,4 +13,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
+
+  # Check for valid URI
+  def uri?(string)
+    URI.parse(string)
+  rescue URI::BadURIError
+    false
+  rescue URI::InvalidURIError
+    false
+  end
 end
