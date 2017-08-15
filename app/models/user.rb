@@ -24,6 +24,8 @@ class User < ApplicationRecord
     end
   end
 
+  # :nocov:
+  # For whatt?
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
@@ -33,5 +35,6 @@ class User < ApplicationRecord
       where(conditions.to_h).first
     end
   end
+  # :nocov:
 
 end
