@@ -11,8 +11,7 @@ class UsersController < ApplicationController
       @user.instagram = @user.instagram.sub('@', '')
     end
 
-    @karma = @user.posts.map{|c| c.cached_votes_total}.sum +
-             @user.comments.map{|c| c.cached_votes_total}.sum
+    @karma = @user.posts.map{|c| c.cached_votes_total}.sum + @user.comments.map{|c| c.cached_votes_total}.sum
 
   end
 
@@ -29,14 +28,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user != current_user
       redirect_to root_path
-    end
 
-    if @user.update_attributes(profile_params)
-      flash[:notice] = "Your profile has been updated"
-      redirect_to user_profile_path(@user.username)
     else
-      flash[:notice] = "The username has been taken"
-      redirect_to edit_profile_path(current_user.username)
+      if @user.update_attributes(profile_params)
+        flash[:notice] = "Your profile has been updated"
+        redirect_to user_profile_path(@user.username)
+      else
+        flash[:notice] = "The username has been taken"
+        redirect_to edit_profile_path(current_user.username)
+      end
     end
 
   end
