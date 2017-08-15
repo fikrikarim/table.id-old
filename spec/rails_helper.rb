@@ -1,9 +1,11 @@
 require 'simplecov'
+
+# No coverage ensure it will not start on guard, run 'rspec' for test coverage
 SimpleCov.start 'rails' do
   add_filter do |source_file|
     source_file.lines.count < 5
   end
-end
+end unless ENV["NO_COVERAGE"]
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
