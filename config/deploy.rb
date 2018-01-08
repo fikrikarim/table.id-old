@@ -1,11 +1,11 @@
 # Follow tutorial https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma
 #
 # Change these
-server '128.199.254.235', port: 22, roles: [:web, :app, :db], primary: true
+server '13.250.135.214', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:fikrikarim/table.id.git'
 set :application,     'table.id'
-set :user,            'deploy'
+set :user,            'ubuntu'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
