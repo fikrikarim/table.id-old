@@ -340,7 +340,7 @@ DEPENDENCIES
   newrelic_rpm
   pg
   poltergeist
-  puma (= 3.8.1)
+  puma
   rails (~> 5.1.1)
   redcarpet
   rspec-rails

@@ -4,7 +4,7 @@
 
 DigitalOcean Using this tutorial [Deploying a Rails App on Ubuntu 14.04 with Capistrano, Nginx, and Puma](https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma)
 
-SSL[Let's Encrypt](https://certbot.eff.org/#ubuntuxenial-nginx)  
+SSL [Let's Encrypt](https://certbot.eff.org/#ubuntuxenial-nginx)  
 Renewal:
 ```ruby
 certbot renew --dry-run
@@ -51,13 +51,17 @@ group :development, :test do
 end
 ```
 
+
 To run the automatic test:
+Install phantomJS first,
+```ruby
+brew install phantomjs
+```
+then run
 ```ruby
 guard
-# Then press return to run all the test
 ```
-
-- Use phantom.js as javascript driver
+Then press return to run all the test
 
 ### Testing Syntax
 
