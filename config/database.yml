@@ -23,10 +23,12 @@ test:
   database: tableid_test
 
 production:
-    <<: *default
-    adapter: postgresql
-    encoding: unicode
-    database: tableid_production
-    username: ubuntu
-    password: <%= ENV['DATABASE_PRODUCTION_PASSWORD'] %>
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
 
